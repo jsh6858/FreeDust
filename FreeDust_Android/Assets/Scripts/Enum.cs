@@ -1,0 +1,40 @@
+﻿
+
+public enum CARD_TYPE
+{
+	ATTACK,
+	SHIELD,
+	HEAL,
+	END
+}
+
+public enum EDIT_VALUE
+{
+	MY_HP,
+	YOUR_HP,
+	ATT_SUPERIOR,
+	DEF_SUPERIOR,
+	HEAL_SUPERIOR,
+	WAIT_TIME,
+}
+
+public enum GAME_MODE
+{
+	CARD_SELECT,
+	BATTLE,
+}
+
+public enum BOX_SAVE_DATA_INT_SORT
+{
+	PLAYER_HP,
+}
+
+public enum BOX_SAVE_DATA_FLOAT_SORT
+{
+	SUPERIOR_BONUS,
+}
+
+public enum BOX_SAVE_DATA_BOOL_SORT
+{
+	
+}

@@ -21,6 +21,7 @@ ExportedObj/
 *.pidb.meta
 *.booproj
 *.svd
+*.vs
  
 # Unity3D Crash Reports
 sysinfo.txt

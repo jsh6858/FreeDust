@@ -6,11 +6,20 @@ public class Deck : MonoBehaviour {
 	public SmallCard[] m_smallCard;
 	public UIGrid m_grid;
 
-	// Skill
+    // Skill
 
-	// Ani
+    // Ani
+    Character m_character;
+    
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            m_character.Set_Damage(-1000);
+        }
+    }
 
-	void Awake()
+    void Awake()
 	{
 		m_smallCard = new SmallCard[5];
 
@@ -28,8 +37,9 @@ public class Deck : MonoBehaviour {
 
 		m_grid.Reposition();
 	}
+    
 
-	public void Set_Card(int iIndex, int iNum, CARD_TYPE cardType, bool bEnemy)
+    public void Set_Card(int iIndex, int iNum, CARD_TYPE cardType, bool bEnemy)
 	{
 		m_smallCard[iIndex].SetCard(iNum, cardType);
 		m_smallCard[iIndex].Set_Enemy(bEnemy);
@@ -41,8 +51,11 @@ public class Deck : MonoBehaviour {
 		obj.transform.SetParent(transform.Find("Skill"), false );
 	}
 
-	public void Set_Character(GameObject character)
+	public void Set_Character(GameObject character, bool bEnemy)
 	{
-		
-	}
+        m_character = (GameObject.Instantiate(character, Vector3.zero, Quaternion.identity)).GetComponent<Character>();
+        m_character.transform.SetParent(transform.Find("Character"), false);
+
+        m_character.Set_Character(bEnemy);
+    }
 }

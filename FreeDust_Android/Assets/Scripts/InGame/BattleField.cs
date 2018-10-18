@@ -18,12 +18,19 @@ public class BattleField : MonoBehaviour {
 
 	public void Start_Battle()
 	{
+        // Cards
 		Set_MyDeck();
 		Set_AIDeck();
 		
-		m_deckMine.Set_Skill(GameObject.Instantiate(Resources.Load("Prefab/Skill/Card_Change") as GameObject));
-		m_deckEnemy.Set_Skill(GameObject.Instantiate(Resources.Load("Prefab/Skill/Card_Change") as GameObject));
-	}
+        // Skills
+		m_deckMine.Set_Skill(Resources.Load("Prefab/Skill/Card_Change") as GameObject);
+		m_deckEnemy.Set_Skill(Resources.Load("Prefab/Skill/Card_Change") as GameObject);
+
+        // Character
+        m_deckMine.Set_Character(Resources.Load("Prefab/Character/Monster01") as GameObject, false);
+        m_deckEnemy.Set_Character(Resources.Load("Prefab/Character/Monster02") as GameObject, true);
+
+    }
 
 	void Set_MyDeck()
 	{

@@ -24,6 +24,13 @@ public enum GAME_MODE
 	BATTLE,
 }
 
+public enum CHARACTER_STATE
+{
+    IDLE,
+    ATTACK,
+    DAMAGED,
+}
+
 public enum BOX_SAVE_DATA_INT_SORT
 {
 	PLAYER_HP,
@@ -38,3 +45,4 @@ public enum BOX_SAVE_DATA_BOOL_SORT
 {
 	
 }
+

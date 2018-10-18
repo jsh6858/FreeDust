@@ -3,25 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BigCard : Card {
-    
+
     #region Varibles
-    
-    public UILabel _txtNum; // x3
 
-    public UISprite _sprItem; 
-    public UISprite _sprType;
-
+    public UISprite _sprItem;
     public GameObject _objTypeSelect;
 
     #endregion
 
-    public void SetCard(int iNum, CARD_TYPE cardType = CARD_TYPE.END)
+    public override void SetCard(int iNum, CARD_TYPE cardType = CARD_TYPE.END)
     {
-        m_iPower = iNum;
-        _txtNum.text = "x" + m_iPower;
-
-        m_cardType = cardType;
-        _sprType.spriteName = _strAttribute[(int)m_cardType];
+        base.SetCard(iNum, cardType);
     }
 
     public void OpenChangeType(bool b)
@@ -39,7 +31,7 @@ public class BigCard : Card {
 
         m_cardType = (CARD_TYPE)iSelect;
 
-        _sprType.spriteName = _strAttribute[(int)m_cardType];
+        base.SetCard(m_iPower, m_cardType);
         _sprItem.spriteName = _strAttribute[(int)m_cardType];
     }
 
@@ -47,4 +39,6 @@ public class BigCard : Card {
     {
         EventDelegate.Add(_sprType.GetComponent<UIButton>().onClick, newEvent);
     }
+
+
 }

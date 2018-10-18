@@ -14,6 +14,6 @@ public class GameManager {
 		}
 	}
     
-
+	public InGameManager m_inGameManager;
 	
 }

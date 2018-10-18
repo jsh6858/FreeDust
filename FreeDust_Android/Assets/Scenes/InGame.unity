@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -295,7 +295,7 @@ Transform:
   m_GameObject: {fileID: 292232198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0026773761, y: 0.0026773761, z: 0.0026773761}
+  m_LocalScale: {x: 0.0027739252, y: 0.0027739252, z: 0.0027739252}
   m_Children:
   - {fileID: 1315008641}
   - {fileID: 749147868}
@@ -305,6 +305,48 @@ Transform:
   m_Father: {fileID: 1061130690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &383376604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367513707983938, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eaa5aa291df704a228a16a42e9c4c69f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &749147864
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,9 +504,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 939073058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae987646729cf2948a8252f9a85822f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c8ac670b06784cbb8a444d8e43feb7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cardSelect: {fileID: 0}
+  _BattleField: {fileID: 0}
 --- !u!1 &1059731046
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +570,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 1280
   mHeight: 720
-  mDepth: -5
+  mDepth: -100
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0

@@ -11,4 +11,5 @@ public class Global {
 	public static readonly string[] EDIT_STRINGS = new string[] { "MyHp", "YourHp", "Att_Superior", "Def_Superior", "Heal_Superior", "WaitingTime"};
 	public static readonly float[] EDIT_DEFAULTS = new float[] { 2500f, 2500f, 3.0f, 3.5f, 2.5f, 15f};
 
+
 }

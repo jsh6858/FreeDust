@@ -31,23 +31,13 @@ public class CardSelect : MonoBehaviour {
 			temp.transform.SetParent(grid);
 
 			selectCard[i] = temp.GetComponent<BigCard>();
-			selectCard[i].SetCard(i+1);
+			selectCard[i].SetCard(i+1, CARD_TYPE.ATTACK);
 
+			// 이벤트 넣어주기
             EventDelegate newEvent = new EventDelegate(this, "OnPush_OpenSelection");
-
-            newEvent.parameters[0] = MakeParameter(selectCard[i], typeof(BigCard));
-            
+            newEvent.parameters[0] = UsefulFunction.MakeParameter(selectCard[i], typeof(BigCard));
             selectCard[i].AddEvent_typeSelect(newEvent);
         }
-    }
-
-    private EventDelegate.Parameter MakeParameter(Object _value, System.Type _type)
-    {
-        EventDelegate.Parameter param = new EventDelegate.Parameter();  // 이벤트 parameter 생성.
-        param.obj = _value;                                              // 이벤트 함수에 전달하고 싶은 값.
-        param.expectedType = _type;                                     // 값의 타입.
-
-        return param;
     }
 
     public int Get_SelectedCardCount()
@@ -73,14 +63,6 @@ public class CardSelect : MonoBehaviour {
 
 	public void Play_Game()
 	{
-		for(int i=0; i<selectCard.Length; ++i)
-		{
-			// 선택되지 않은 카드는 랜덤지정
-			if(selectCard[i].m_cardType == CARD_TYPE.END)
-				selectCard[i].m_cardType = (CARD_TYPE)Random.Range(0, (int)CARD_TYPE.END);
-		}
-
-		//GameManager.Instance.inGameManger.Start_Game();
-
+		GameManager.Instance.m_inGameManager.Start_Game();
 	}
 }

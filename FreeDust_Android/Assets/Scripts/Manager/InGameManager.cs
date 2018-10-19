@@ -10,19 +10,25 @@ public class InGameManager : MonoBehaviour {
 
     void Awake()
     {
+        Start_CardSelect();
+    }
+
+    void Initialize()
+    {
         GameManager.Instance.m_inGameManager = this;
 
         Sound_Manager.GetInstance().Initialize();
 
         _cardSelect = GameObject.Instantiate((Resources.Load("Prefab/CardSelect") as GameObject)).GetComponent<CardSelect>();
         _BattleField = GameObject.Instantiate((Resources.Load("Prefab/BattleField") as GameObject)).GetComponent<BattleField>();
-
-        Start_CardSelect();
     }
 
     // 카드 선택 시작
     public void Start_CardSelect()
     {
+        RemoveAll();
+        Initialize();
+
         CloseAll();
         _cardSelect.gameObject.SetActive(true);
         Global._gameMode = GAME_MODE.CARD_SELECT;
@@ -49,5 +55,14 @@ public class InGameManager : MonoBehaviour {
     {
         _cardSelect.gameObject.SetActive(false);
         _BattleField.gameObject.SetActive(false);
+    }
+
+    void RemoveAll()
+    {   
+        if(_cardSelect != null)
+            Destroy(_cardSelect.gameObject);
+        if(_BattleField != null)
+            Destroy(_BattleField.gameObject);
+
     }
 }

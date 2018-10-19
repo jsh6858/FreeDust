@@ -13,7 +13,7 @@ public class Character : MonoBehaviour {
         m_hp = GameObject.Instantiate((Resources.Load("Prefab/Character/Character_Hp") as GameObject)).GetComponent<Hp>();
         m_hp.transform.SetParent(transform.Find("Hp"), false);
 
-        m_hp.Set_Hp(3000);
+        m_hp.Set_Hp(Global.PLAYER_HP);
     }
 
     public void Set_Character(bool bEnemy)
@@ -23,9 +23,14 @@ public class Character : MonoBehaviour {
         
     }
 
-    public void Set_Damage(int iDamage)
+    public bool Set_Damage(int iDamage)
     {
-        m_hp.Set_Damage(iDamage);
+        return m_hp.Set_Damage(iDamage);
     }
     
+    public void Set_Revive()
+    {
+        m_hp.Set_Hp(1);
+    }
+
 }

@@ -22,6 +22,14 @@ public enum GAME_MODE
 {
 	CARD_SELECT,
 	BATTLE,
+
+	PLAY_CARD,
+
+	BATTLE_RESULT,
+
+	CHANGE_CARD,
+
+
 }
 
 public enum CHARACTER_STATE

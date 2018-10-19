@@ -418,7 +418,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713460584431674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.288569, y: -91.02718, z: 0}
+  m_LocalPosition: {x: 3.2, y: -89.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4252568525667288}
@@ -475,8 +475,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867221085181004}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 258, y: -60, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4539449490760320}
@@ -519,7 +519,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699507680281500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.288569, y: -109.7122, z: 0}
+  m_LocalPosition: {x: 3.2000008, y: -111.01219, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4501196452821634}
@@ -532,7 +532,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1927686767722568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.357315, y: -91.027176, z: 0}
+  m_LocalPosition: {x: -74.64029, y: -88.4, z: 0}
   m_LocalScale: {x: 0.19984013, y: 0.19984013, z: 1}
   m_Children: []
   m_Father: {fileID: 4252568525667288}
@@ -671,7 +671,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316137252088524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.357315, y: -109.712234, z: 0}
+  m_LocalPosition: {x: -74.64029, y: -109.712234, z: 0}
   m_LocalScale: {x: 0.19984013, y: 0.19984013, z: 1}
   m_Children: []
   m_Father: {fileID: 4501196452821634}
@@ -684,7 +684,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471081339674160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.3, y: -72.5, z: 0}
+  m_LocalPosition: {x: 3.2025614, y: -69.40103, z: 0}
   m_LocalScale: {x: 1.0008001, y: 1.0008001, z: 1.0008001}
   m_Children: []
   m_Father: {fileID: 4168524324728354}
@@ -727,7 +727,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1557940690752302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.4, y: -72.5, z: 0}
+  m_LocalPosition: {x: -74.700005, y: -68.1, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1.0008001}
   m_Children: []
   m_Father: {fileID: 4168524324728354}
@@ -975,6 +975,12 @@ MonoBehaviour:
   _sprType: {fileID: 114671825496318070}
   _sprItem: {fileID: 114215545484507670}
   _objTypeSelect: {fileID: 1022916344267990}
+  m_itemExplain: {fileID: 1815973306890260}
+  m_name: {fileID: 114574571874633416}
+  m_labelInfo:
+  - {fileID: 114621265703484010}
+  - {fileID: 114827858054124836}
+  - {fileID: 114385424758387410}
 --- !u!114 &114268777460863358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1196,21 +1202,21 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 0, g: 0, b: 0, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 106
-  mHeight: 12
+  mWidth: 130
+  mHeight: 16
   mDepth: 50
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 8.833333
+  aspectRatio: 8.125
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: "9999\uC758 \uCE74\uC6B4\uD130 \uACF5\uACA9"
-  mFontSize: 12
+  mFontSize: 15
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
@@ -1220,7 +1226,7 @@ MonoBehaviour:
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 2
-  mApplyGradient: 1
+  mApplyGradient: 0
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   mSpacingX: 0
@@ -1401,21 +1407,21 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 0, g: 0, b: 0, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 106
-  mHeight: 12
+  mWidth: 130
+  mHeight: 16
   mDepth: 50
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 8.833333
+  aspectRatio: 8.125
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: "9999\uC758 \uCE74\uC6B4\uD130 \uACF5\uACA9"
-  mFontSize: 12
+  mFontSize: 15
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
@@ -1425,7 +1431,7 @@ MonoBehaviour:
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 2
-  mApplyGradient: 1
+  mApplyGradient: 0
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   mSpacingX: 0
@@ -1740,7 +1746,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 114827308521691572, guid: b0027c3748c891c4bbf6c17808312d66, type: 2}
-  mSpriteName: Sheild
+  mSpriteName: Shield
   mFillCenter: 1
 --- !u!114 &114760324005009176
 MonoBehaviour:
@@ -1786,7 +1792,7 @@ MonoBehaviour:
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
   mClipSoftness: {x: 4, y: 4}
-  mDepth: 20
+  mDepth: 100
   mSortingOrder: 0
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
@@ -1850,21 +1856,21 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 0, g: 0, b: 0, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 106
-  mHeight: 12
+  mWidth: 130
+  mHeight: 16
   mDepth: 50
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 8.833333
+  aspectRatio: 8.125
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: "9999\uC758 \uCE74\uC6B4\uD130 \uACF5\uACA9"
-  mFontSize: 12
+  mFontSize: 15
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
@@ -1874,7 +1880,7 @@ MonoBehaviour:
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 2
-  mApplyGradient: 1
+  mApplyGradient: 0
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   mSpacingX: 0

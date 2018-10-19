@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Card : MonoBehaviour {
 
-    protected readonly string[] _strAttribute = { "Attack", "Shield", "Heal", "Attack" };
     protected readonly Color[] _color = {Color.red, Color.blue, Color.green, Color.red};
     public CARD_TYPE m_cardType = CARD_TYPE.END;
     public int m_iPower = 0;
@@ -18,6 +17,6 @@ public class Card : MonoBehaviour {
         _txtNum.color = _color[(int)cardType];
 
         m_cardType = cardType;
-        _sprType.spriteName = _strAttribute[(int)cardType];
+        _sprType.spriteName = Global.STR_ATTRIBUTE[(int)cardType];
     }
 }

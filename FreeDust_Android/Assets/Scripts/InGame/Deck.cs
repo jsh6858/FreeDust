@@ -9,7 +9,7 @@ public class Deck : MonoBehaviour {
     // Skill
 
     // Ani
-    Character m_character;
+    public Character m_character;
     
     private void Update()
     {
@@ -19,7 +19,7 @@ public class Deck : MonoBehaviour {
         }
     }
 
-    void Awake()
+    protected void Initialzie()
 	{
 		m_smallCard = new SmallCard[5];
 
@@ -31,14 +31,11 @@ public class Deck : MonoBehaviour {
 			GameObject obj = GameObject.Instantiate(smallCard, Vector3.zero, Quaternion.identity);
 			
 			m_smallCard[i] = obj.GetComponent<SmallCard>();
-
 			obj.transform.SetParent(parent);
 		}
 
 		m_grid.Reposition();
 	}
-    
-
     public void Set_Card(int iIndex, int iNum, CARD_TYPE cardType, bool bEnemy)
 	{
 		m_smallCard[iIndex].SetCard(iNum, cardType);
@@ -57,5 +54,36 @@ public class Deck : MonoBehaviour {
         m_character.transform.SetParent(transform.Find("Character"), false);
 
         m_character.Set_Character(bEnemy);
+    }
+
+	// TimeOver, AI
+    public Card Submit_RandomCard()
+    {
+        List<int> listInt = new List<int>();
+        for(int i=0; i<m_smallCard.Length; ++i)
+        {
+            if(m_smallCard[i].m_bActivated)
+                listInt.Add(i);
+        }
+
+        if(0 == listInt.Count)
+            return null;
+
+        int iRand = Random.Range(0, listInt.Count);
+
+        return m_smallCard[listInt[iRand]];
+    }
+
+    public bool Set_Damage(int iDamage)
+    {
+        return m_character.Set_Damage(iDamage);
+    }
+
+    public void Activate_Cards()
+    {
+        for(int i=0; i<m_smallCard.Length; ++i)
+        {
+            m_smallCard[i].Set_Activate(true);
+        }
     }
 }

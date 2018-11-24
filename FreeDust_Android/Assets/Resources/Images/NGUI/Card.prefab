@@ -53,8 +53,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 770873be140fe7e41bb372fcfd2e355c, type: 2}
   mSprites:
+  - name: Game_Card_Window
+    x: 0
+    y: 250
+    width: 182
+    height: 262
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Ui_Card_At_01
-    x: 137
+    x: 440
     y: 328
     width: 134
     height: 184
@@ -67,8 +80,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Card_Cover_01
-    x: 0
-    y: 325
+    x: 303
+    y: 161
     width: 136
     height: 187
     borderLeft: 0
@@ -80,8 +93,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Card_Df_01
-    x: 135
-    y: 140
+    x: 575
+    y: 328
     width: 134
     height: 184
     borderLeft: 0
@@ -93,10 +106,114 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Card_Heal_01
-    x: 0
-    y: 140
+    x: 440
+    y: 143
     width: 134
     height: 184
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Game_Line
+    x: 573
+    y: 127
+    width: 319
+    height: 15
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Noraml_Card_Attack
+    x: 154
+    y: 76
+    width: 148
+    height: 173
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 9
+    paddingTop: 13
+    paddingBottom: 6
+  - name: Ui_Noraml_Card_Defend
+    x: 0
+    y: 60
+    width: 153
+    height: 189
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 21
+    paddingRight: 21
+    paddingTop: 10
+    paddingBottom: 34
+  - name: Ui_Noraml_Card_Effect_01
+    x: 303
+    y: 18
+    width: 127
+    height: 142
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Noraml_Card_Heal
+    x: 183
+    y: 349
+    width: 144
+    height: 163
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 13
+    paddingRight: 4
+    paddingTop: 13
+    paddingBottom: 16
+  - name: Ui_Noraml_Card_Name_Attack
+    x: 431
+    y: 72
+    width: 141
+    height: 70
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Noraml_Card_Name_Defend
+    x: 431
+    y: 1
+    width: 141
+    height: 70
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Noraml_Card_Name_Heal
+    x: 154
+    y: 5
+    width: 141
+    height: 70
     borderLeft: 0
     borderRight: 0
     borderTop: 0

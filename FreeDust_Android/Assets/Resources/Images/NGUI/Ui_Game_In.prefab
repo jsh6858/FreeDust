@@ -53,9 +53,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 6d992737a57ac154d9438ff1c2f5dbfb, type: 2}
   mSprites:
-  - name: Ui_Body_01
+  - name: Game_Ui_Timer_01
+    x: 908
+    y: 857
+    width: 71
+    height: 167
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Game_Ui_Timer_02
+    x: 699
+    y: 717
+    width: 66
+    height: 166
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Game_Ui_Timer_Line
     x: 295
-    y: 66
+    y: 290
+    width: 100
+    height: 6
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Game_Ui_Timer_Window
+    x: 0
+    y: 98
+    width: 132
+    height: 132
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Game_Window
+    x: 0
+    y: 372
+    width: 349
+    height: 249
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Body_01
+    x: 466
+    y: 809
     width: 232
     height: 74
     borderLeft: 0
@@ -68,7 +133,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Ui_Body_02
     x: 295
-    y: 141
+    y: 653
     width: 228
     height: 153
     borderLeft: 0
@@ -80,8 +145,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Card_Color
-    x: 466
-    y: 344
+    x: 295
+    y: 625
     width: 23
     height: 27
     borderLeft: 0
@@ -94,7 +159,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Ui_Card_Info
     x: 0
-    y: 110
+    y: 622
     width: 294
     height: 402
     borderLeft: 0
@@ -106,20 +171,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Card_Info_At
-    x: 466
-    y: 372
-    width: 220
-    height: 140
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Ui_Card_Info_Df
-    x: 524
+    x: 0
     y: 231
     width: 220
     height: 140
@@ -131,9 +183,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: Ui_Card_Info_Heal
+  - name: Ui_Card_Info_Df
     x: 687
-    y: 372
+    y: 884
+    width: 220
+    height: 140
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Card_Info_Heal
+    x: 466
+    y: 884
     width: 220
     height: 140
     borderLeft: 0
@@ -145,8 +210,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Card_Info_Line
-    x: 524
-    y: 142
+    x: 191
+    y: 2
     width: 232
     height: 13
     borderLeft: 0
@@ -159,7 +224,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Ui_Card_Select_Effectline
     x: 295
-    y: 295
+    y: 807
     width: 170
     height: 217
     borderLeft: 0
@@ -171,8 +236,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Icon_Player
-    x: 825
-    y: 313
+    x: 259
+    y: 107
     width: 64
     height: 58
     borderLeft: 0
@@ -183,9 +248,48 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: Ui_Noraml_Cardicon_Attack
+    x: 191
+    y: 16
+    width: 89
+    height: 88
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 1
+  - name: Ui_Noraml_Cardicon_Defend
+    x: 221
+    y: 286
+    width: 73
+    height: 85
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Ui_Noraml_Cardicon_Heal
+    x: 100
+    y: 1
+    width: 90
+    height: 96
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Ui_Skill_01
-    x: 524
-    y: 156
+    x: 259
+    y: 166
     width: 79
     height: 74
     borderLeft: 0
@@ -197,7 +301,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Skill_Icon_Empty
-    x: 745
+    x: 295
     y: 297
     width: 79
     height: 74
@@ -211,7 +315,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Ui_Skill_Room 1
     x: 0
-    y: 16
+    y: 4
     width: 99
     height: 93
     borderLeft: 0
@@ -223,8 +327,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Timer_Color_01
-    x: 908
-    y: 387
+    x: 133
+    y: 105
     width: 63
     height: 125
     borderLeft: 0
@@ -236,8 +340,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Timer_Color_02
-    x: 908
-    y: 262
+    x: 197
+    y: 106
     width: 61
     height: 124
     borderLeft: 0
@@ -249,8 +353,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_Timer_Room
-    x: 745
-    y: 240
+    x: 324
+    y: 109
     width: 58
     height: 56
     borderLeft: 0
@@ -262,8 +366,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_User_Nickname_ex_01
-    x: 825
-    y: 270
+    x: 281
+    y: 64
     width: 80
     height: 42
     borderLeft: 0
@@ -275,8 +379,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Ui_User_Nickname_ex_02
-    x: 100
-    y: 65
+    x: 221
+    y: 241
     width: 136
     height: 44
     borderLeft: 0

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FreeDust_Android/Assets/Resources/NGUI.meta
+guid: a8a9fb208d538b0408890ad52713d0f4
+=======
 guid: 8b489f80ca1ed4559b1e198b37ff4802
+>>>>>>> 17cc882b8ae6416591169629b304525879b7e942:FreeDust_Android/Assets/Resources/NGUI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

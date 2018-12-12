@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1751921598671078}
+  m_RootGameObject: {fileID: 1552778767449636}
   m_IsPrefabAsset: 1
---- !u!1 &1751921598671078
+--- !u!1 &1552778767449636
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4796920012035414}
-  - component: {fileID: 114839749496232980}
+  - component: {fileID: 4494541996690246}
+  - component: {fileID: 114359662244531068}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Ef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4796920012035414
+--- !u!4 &4494541996690246
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1751921598671078}
+  m_GameObject: {fileID: 1552778767449636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,37 +40,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114839749496232980
+--- !u!114 &114359662244531068
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1751921598671078}
+  m_GameObject: {fileID: 1552778767449636}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: b9feb558374b249ddacdc01918348098, type: 2}
+  material: {fileID: 2100000, guid: 60d5d0287892ec1439cc53658a02acd3, type: 2}
   mSprites:
-  - name: 01
-    x: 642
-    y: 354
-    width: 232
-    height: 323
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Ch_01_Attack
+  - name: Ef_Attack_01
     x: 0
-    y: 740
-    width: 388
-    height: 284
+    y: 56
+    width: 136
+    height: 131
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -79,37 +66,50 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: Ch_01_Attack_Sc_01
-    x: 672
-    y: 678
-    width: 269
-    height: 346
+  - name: Ef_Attack_02
+    x: 465
+    y: 89
+    width: 37
+    height: 289
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Ch_01_Attackready
-    x: 358
-    y: 370
-    width: 283
-    height: 311
+    paddingLeft: 6
+    paddingRight: 6
+    paddingTop: 3
+    paddingBottom: 3
+  - name: Ef_Attack_03
+    x: 234
+    y: 188
+    width: 56
+    height: 324
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Ch_01_Attackready_02
+    paddingLeft: 14
+    paddingRight: 12
+    paddingTop: 3
+    paddingBottom: 1
+  - name: Ef_Attack_04
+    x: 291
+    y: 225
+    width: 71
+    height: 287
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 11
+    paddingTop: 2
+    paddingBottom: 12
+  - name: Ef_Attack_11
     x: 0
-    y: 477
-    width: 357
-    height: 262
+    y: 285
+    width: 233
+    height: 227
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -117,46 +117,72 @@ MonoBehaviour:
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
-    paddingBottom: 0
-  - name: Ch_01_Back
-    x: 389
-    y: 682
-    width: 282
-    height: 342
+    paddingBottom: 1
+  - name: Ef_Run_01
+    x: 291
+    y: 216
+    width: 23
+    height: 8
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Ch_01_Idle
-    x: 0
-    y: 63
-    width: 195
-    height: 413
+    paddingLeft: 109
+    paddingRight: 9
+    paddingTop: 113
+    paddingBottom: 9
+  - name: Ef_Run_02
+    x: 363
+    y: 483
+    width: 36
+    height: 29
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: Ch_01_Lowhp
-    x: 196
-    y: 124
-    width: 153
-    height: 352
+    paddingLeft: 95
+    paddingRight: 10
+    paddingTop: 92
+    paddingBottom: 9
+  - name: Ef_Run_03
+    x: 363
+    y: 285
+    width: 101
+    height: 93
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 30
+    paddingRight: 10
+    paddingTop: 28
+    paddingBottom: 9
+  - name: Ef_Run_04
+    x: 363
+    y: 379
+    width: 112
+    height: 103
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 13
+    paddingTop: 17
+    paddingBottom: 10
+  - name: Ef_Run_05
+    x: 315
+    y: 133
+    width: 79
+    height: 91
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 54
+    paddingTop: 7
+    paddingBottom: 32
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

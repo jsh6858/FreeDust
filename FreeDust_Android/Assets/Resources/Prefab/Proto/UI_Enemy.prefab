@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4544172439012410}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4737432576433098}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4845533574480302}
   - component: {fileID: 114583561318910998}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4746929361805638}
   - component: {fileID: 114270744503854898}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4242204616438218}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4103238526403144}
   - component: {fileID: 114481878605493906}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4529149205154936}
   - component: {fileID: 114963063890471002}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4170836588491372}
   - component: {fileID: 114133679337615344}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4680269325342580}
   - component: {fileID: 114715987809090724}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290724364009888}
   - component: {fileID: 114460042667873164}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4851041118047742}
   - component: {fileID: 114109630961913188}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Nickname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4033110641221428}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Icon_Profile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,13 +208,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4662804189609368}
   - component: {fileID: 114351844445382914}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Minus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1382909449098578
 GameObject:
   m_ObjectHideFlags: 1
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4565959394478960}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4222800792044216}
   - component: {fileID: 114031269226471646}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4663659696612298}
   - component: {fileID: 95885368935512410}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Card_Select_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4097413616026466}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4331149167292764}
   - component: {fileID: 114488754597169332}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4031759014929602}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Defend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4355083757821376}
   - component: {fileID: 114234557811055498}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4250624588475274}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cooltime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4836771298194086}
   - component: {fileID: 95548855146149200}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Damaged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421380128245448}
   - component: {fileID: 114599420790351126}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4208927979057948}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4399471949350252}
   - component: {fileID: 114879120213978230}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541598765999226}
   - component: {fileID: 114784072579151348}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4563832419771432}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,13 +442,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4801862873940610}
   - component: {fileID: 114754400597805474}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1782459206258674
 GameObject:
   m_ObjectHideFlags: 1
@@ -458,7 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4851156252030898}
   - component: {fileID: 114200487128813712}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4051414590658228}
-  m_Layer: 9
+  - component: {fileID: 114764150786913532}
+  m_Layer: 10
   m_Name: UI_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4149170213742106}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Skill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4558433205893690}
   - component: {fileID: 114537343191567798}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4343963150759628}
   - component: {fileID: 114651871885708576}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550666621183844}
   - component: {fileID: 114120411343675748}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431661245500696}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4597451545983470}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4691996284580162}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4455351671746102}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4896051896272674}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4670540050035334}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Defend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +669,7 @@ Transform:
   m_GameObject: {fileID: 1797538183891052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -253.00002, y: 391, z: 0}
-  m_LocalScale: {x: 0.9984, y: 0.9984, z: 0.9984}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4597451545983470}
   - {fileID: 4033110641221428}
@@ -1315,7 +1316,7 @@ MonoBehaviour:
   mWidth: 136
   mHeight: 60
   mDepth: 412
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 0462a8d732aa349408de3afd6de5ef9f, type: 3}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -1653,7 +1654,7 @@ MonoBehaviour:
   mWidth: 30
   mHeight: 60
   mDepth: 413
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 07a09a317a91a36499bf82e73cc39791, type: 3}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -1775,7 +1776,7 @@ MonoBehaviour:
   mWidth: 172
   mHeight: 80
   mDepth: 413
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 07a09a317a91a36499bf82e73cc39791, type: 3}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -1843,7 +1844,7 @@ MonoBehaviour:
   mWidth: 38
   mHeight: 70
   mDepth: 431
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 07a09a317a91a36499bf82e73cc39791, type: 3}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -2181,7 +2182,7 @@ MonoBehaviour:
   mWidth: 128
   mHeight: 60
   mDepth: 413
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 07a09a317a91a36499bf82e73cc39791, type: 3}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -2216,6 +2217,17 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &114764150786913532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797538183891052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f8110a7dd6e7e4abb76e1f1d03e0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114784072579151348
 MonoBehaviour:
   m_ObjectHideFlags: 1

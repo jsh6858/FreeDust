@@ -15,8 +15,12 @@ public class InGameManager : MonoBehaviour {
     public MyDeck _myDeck;
     public EnemyDeck _enemyDeck;
 
+    public GAME_STATE _gameState = GAME_STATE.END;
+
     public void Start_Battle()
     {
+        _gameState = GAME_STATE.BATTLE;
+
         Debug.Log("Battle Start!");
 
         Card myCard = _myDeck.Get_SelectedCard();
@@ -28,7 +32,7 @@ public class InGameManager : MonoBehaviour {
         CARD_TYPE myType = myCard._cardType;
         CARD_TYPE enemyType = enemyCard._cardType;
 
-        Debug.Log("my " + myType + "enemy " + enemyType);
+        Debug.Log("my : " + myType + "\nenemy : " + enemyType);
 
         // 스킬 확인
 

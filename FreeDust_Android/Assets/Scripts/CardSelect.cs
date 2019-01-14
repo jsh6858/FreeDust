@@ -51,15 +51,22 @@ public class CardSelect : MonoBehaviour {
 
     public void OnClickCard(int index)
     {
+        if(!_centerChild.gameObject.activeSelf)
+            _centerChild.gameObject.SetActive(true);
+
         for (int i = 0; i < cards.Length; ++i)
         {
-            if (i == index)
+            if (i == index) // Select
             {
                 cards[i].OnSelected();
                 _iSelected = i;
-                CenterCallBack(_centerChild.centeredObject);
+
+                if(cards[i]._cardType == CARD_TYPE.END)
+                    CenterCallBack(_centerChild.centeredObject);
+                else
+                    _centerChild.CenterOn(_centerChild.transform.GetChild((int)cards[i]._cardType));
             }
-            else
+            else // Deselect
             {
                 cards[i].onDeSelected();
             }
@@ -68,7 +75,7 @@ public class CardSelect : MonoBehaviour {
 
     public void CenterCallBack(GameObject centeredObject)
     {
-        if(-1 == _iSelected)
+        if(-1 == _iSelected || null == centeredObject)
             return;
 
         switch(centeredObject.name)

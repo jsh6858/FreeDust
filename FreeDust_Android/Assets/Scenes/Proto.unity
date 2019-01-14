@@ -188,7 +188,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3005
+  startingRenderQueue: 3003
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -219,7 +219,12 @@ MonoBehaviour:
   fitHeight: 1
   adjustByDPI: 0
   shrinkPortraitUI: 0
---- !u!1001 &342835461
+--- !u!4 &342835462 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4592378368881768, guid: 58147e75c161647619f9aa361a7620ce,
+    type: 2}
+  m_PrefabInternal: {fileID: 358982965}
+--- !u!1001 &358982965
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -258,29 +263,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114818054946818214, guid: 58147e75c161647619f9aa361a7620ce,
-        type: 2}
-      propertyPath: mMat
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114178445702601580, guid: 58147e75c161647619f9aa361a7620ce,
-        type: 2}
-      propertyPath: mMat
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114174555901395894, guid: 58147e75c161647619f9aa361a7620ce,
-        type: 2}
-      propertyPath: mMat
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58147e75c161647619f9aa361a7620ce, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &342835462 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4592378368881768, guid: 58147e75c161647619f9aa361a7620ce,
-    type: 2}
-  m_PrefabInternal: {fileID: 342835461}
 --- !u!1 &381044554
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +434,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3000
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -492,6 +477,7 @@ MonoBehaviour:
   _uiEnemy: {fileID: 0}
   _myDeck: {fileID: 0}
   _enemyDeck: {fileID: 0}
+  _gameState: 4
 --- !u!114 &450557712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +617,6 @@ GameObject:
   - component: {fileID: 613055096}
   - component: {fileID: 613055093}
   - component: {fileID: 613055097}
-  - component: {fileID: 613055094}
   m_Layer: 10
   m_Name: InGameUI
   m_TagString: Untagged
@@ -694,7 +679,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3007
+  startingRenderQueue: 3004
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -705,21 +690,6 @@ MonoBehaviour:
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
   useSortingOrder: 0
---- !u!114 &613055094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 613055091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 818cadb22a05dd444bf650c0512d34f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uiPlayer: {fileID: 0}
-  _uiEnemy: {fileID: 0}
-  _myDeck: {fileID: 0}
-  _enemyDeck: {fileID: 0}
 --- !u!114 &613055096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,6 +1097,14 @@ Prefab:
       propertyPath: onClick.Array.data[0].mTarget
       value: 
       objectReference: {fileID: 1282074387}
+    - target: {fileID: 1325880688359346, guid: 1de99d7161720be4db73e8c42e1696d4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685831735005468, guid: 1de99d7161720be4db73e8c42e1696d4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de99d7161720be4db73e8c42e1696d4, type: 2}
   m_IsPrefabAsset: 0
@@ -1307,6 +1285,7 @@ Transform:
   m_Children:
   - {fileID: 727422648}
   - {fileID: 563235845}
+  - {fileID: 1914185849}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1465,7 +1444,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3006
+  startingRenderQueue: 3004
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -1754,7 +1733,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3002
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -1882,6 +1861,53 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1001 &1914185848
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1282074385}
+    m_Modifications:
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f590788e54724f6ab61cc3ee1a894a8, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1914185849 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4993198435552546, guid: 2f590788e54724f6ab61cc3ee1a894a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1914185848}
 --- !u!1001 &2135034976
 Prefab:
   m_ObjectHideFlags: 0

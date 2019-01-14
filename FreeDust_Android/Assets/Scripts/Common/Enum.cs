@@ -11,3 +11,16 @@ public enum CARD_TYPE
     HEAL,
     END
 }
+
+public enum GAME_STATE
+{
+    READY,
+
+    CARD_SELECT,
+
+    BATTLE,
+
+    CHANGE_CARD,
+
+    END,
+}

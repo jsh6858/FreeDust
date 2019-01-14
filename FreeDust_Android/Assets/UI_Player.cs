@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Player : MonoBehaviour {
+public class UI_Player : UI_Parent {
 
-    private void Awake()
+    private void Start()
     {
-        InGameManager.Instance._uiPlayer = this;
+        Singleton.inGameManager._uiPlayer = this;
     }
 }

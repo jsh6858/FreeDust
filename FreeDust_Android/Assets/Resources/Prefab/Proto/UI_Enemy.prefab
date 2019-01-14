@@ -254,6 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663659696612298}
+  - component: {fileID: 114788488693495346}
   - component: {fileID: 95885368935512410}
   m_Layer: 10
   m_Name: Card_Select_Enemy
@@ -2282,6 +2283,17 @@ MonoBehaviour:
   mAtlas: {fileID: 114398340469296602, guid: 433f4ad79cf2abc45ad74aa3609a4bfb, type: 2}
   mSpriteName: Ui_Icon_Player
   mFillCenter: 1
+--- !u!114 &114788488693495346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430534849869746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2242a1581881400fb2f387703f6ed60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114879120213978230
 MonoBehaviour:
   m_ObjectHideFlags: 1

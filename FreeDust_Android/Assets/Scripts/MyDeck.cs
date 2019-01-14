@@ -6,8 +6,11 @@ public class MyDeck : Deck {
 
 	void Awake ()
     {
-        Set_Deck(new CARD_TYPE[] { CARD_TYPE.ATTACK, CARD_TYPE.DEFEND,
-            CARD_TYPE.DEFEND, CARD_TYPE.DEFEND, CARD_TYPE.HEAL,});
+    }
+
+    public override void Set_Deck(CARD_TYPE[] cardTypes)
+    {
+        base.Set_Deck(cardTypes);
 
         for(int i=0; i<_cards.Length; ++i)
         {
@@ -15,5 +18,11 @@ public class MyDeck : Deck {
             selectEvent.parameters[0].value = i;
             EventDelegate.Add(_cards[i].GetComponent<UIButton>().onClick, selectEvent);
         }
+    }
+    
+
+    void Start()
+    {
+        Singleton.inGameManager._myDeck = this;
     }
 }

@@ -8,7 +8,12 @@ public class Deck : MonoBehaviour {
 
     protected Card[] _cards;
 
-    public void Set_Deck(CARD_TYPE[] cardTypes)
+    public Card[] Get_Deck()
+    {
+        return _cards;
+    }
+
+    public virtual void Set_Deck(CARD_TYPE[] cardTypes)
     {
         if (null == _cards)
         {
@@ -40,5 +45,16 @@ public class Deck : MonoBehaviour {
                 _cards[i].onDeSelected();
             }
         }
+    }
+
+    public Card Get_SelectedCard()
+    {
+        for(int i=0; i<_cards.Length; ++i)
+        {
+            if(_cards[i]._bSelected)
+                return _cards[i];
+        }
+
+        return null;
     }
 }

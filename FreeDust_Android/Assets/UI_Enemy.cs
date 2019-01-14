@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Enemy : MonoBehaviour {
+public class UI_Enemy : UI_Parent {
 
-    private void Awake()
+    private void Start()
     {
-        InGameManager.Instance._uiEnemy = this;
+        Singleton.inGameManager._uiEnemy = this;
     }
 }

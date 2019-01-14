@@ -626,9 +626,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4337587059073392}
+  - component: {fileID: 114912920689303376}
   - component: {fileID: 95912230811220628}
   m_Layer: 10
-  m_Name: Card_Select_Player
+  m_Name: Card_Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1128,7 +1129,7 @@ Transform:
   m_GameObject: {fileID: 1880071240677382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4605811201431100}
   - {fileID: 4225370003943166}
@@ -2336,6 +2337,17 @@ MonoBehaviour:
   mAtlas: {fileID: 114824562704967856, guid: fd13e9ea64e83a04d90858688660d35c, type: 2}
   mSpriteName: Ui_Noraml_Card_Name_Heal
   mFillCenter: 1
+--- !u!114 &114912920689303376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991283538527204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2242a1581881400fb2f387703f6ed60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114943070237934608
 MonoBehaviour:
   m_ObjectHideFlags: 1

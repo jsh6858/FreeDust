@@ -19,12 +19,12 @@ public class UI_Round : MonoBehaviour {
 
 	void Awake()
 	{
-		_timer = transform.Find("Timer").GetComponent<UILabel>();
-		_roundCount = transform.Find("Round_Count").GetComponent<UILabel>();
+		_timer = transform.Find("AnchorC/Timer").GetComponent<UILabel>();
+		_roundCount = transform.Find("AnchorC/Round_Count").GetComponent<UILabel>();
 
 		_roundAttribute = new UISprite[2];
-		_roundAttribute[0] = transform.Find("Sign_Attribute_01").GetComponent<UISprite>();
-		_roundAttribute[1] = transform.Find("Sign_Attribute_02").GetComponent<UISprite>();
+		_roundAttribute[0] = transform.Find("AnchorC/Sign_Attribute_01").GetComponent<UISprite>();
+		_roundAttribute[1] = transform.Find("AnchorC/Sign_Attribute_02").GetComponent<UISprite>();
 	}
 
 	public void SetRound(int iRound, int attribute)
@@ -52,6 +52,9 @@ public class UI_Round : MonoBehaviour {
 			_remainingTime--;
 
 			_timer.text = _remainingTime.ToString();
+
+			if(_remainingTime == 0)
+				Singleton.inGameManager.Start_Battle();
 		}
 
 	}

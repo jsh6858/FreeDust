@@ -29,7 +29,7 @@ public class CardSelect : MonoBehaviour {
     {
         _cards = new Card[5];
 
-        GameObject prefab = Resources.Load("Prefab/Proto/MyCard") as GameObject;
+        GameObject prefab = Resources.Load("Prefab/MyCard") as GameObject;
 
         Transform trParent = transform.Find("Cards/Grid");
 
@@ -44,7 +44,7 @@ public class CardSelect : MonoBehaviour {
 
             EventDelegate selectEvent = new EventDelegate(this, "OnClickCard");
             selectEvent.parameters[0].value = i;
-            EventDelegate.Add(_cards[i].GetComponent<UIButton>().onClick, selectEvent);
+            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onClick, selectEvent);
         }
         trParent.GetComponent<UIGrid>().Reposition();
     }
@@ -108,7 +108,7 @@ public class CardSelect : MonoBehaviour {
 
     public void OnClickOKButton()
     {
-        Singleton.inGameManager.Game_Start(cards);        
+        Singleton.inGameManager.SetMyCard(cards);        
 
         gameObject.SetActive(false);
     }

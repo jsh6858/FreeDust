@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4567464745029932}
   - component: {fileID: 114640638613320672}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4336942578444010}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4638639584552050}
   - component: {fileID: 114052770703430230}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Defense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4036741202813898}
   - component: {fileID: 114575645517444666}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Defense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4236532801379250}
   - component: {fileID: 114132906931426536}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4914638775576366}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4489430895272690}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Defense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4997151688094516}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4495622070388266}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attribute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471144433004248}
   - component: {fileID: 114930559733075298}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4167787882231070}
   - component: {fileID: 114278493109829468}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4226585331738370}
   - component: {fileID: 114788696986052096}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4343960149633702}
   - component: {fileID: 114175679168908196}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290283056666500}
   - component: {fileID: 114064005191808268}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4552770617863428}
   - component: {fileID: 114802028208344552}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4183085274699704}
   - component: {fileID: 114548475622056252}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757047258307764}
   - component: {fileID: 114154636252593108}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4850759193989260}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4706772086171826}
   - component: {fileID: 114407799313472204}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4903533984607574}
   - component: {fileID: 114375472353096168}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,13 +333,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4371623734122248}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Card_Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4036741202813898
 Transform:
   m_ObjectHideFlags: 1
@@ -453,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1941080111306088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -269, z: 0}
+  m_LocalPosition: {x: 0, y: 382, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4167787882231070}
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.5428572
+  aspectRatio: 1.6969697
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 07a09a317a91a36499bf82e73cc39791, type: 3}
   mFont: {fileID: 0}

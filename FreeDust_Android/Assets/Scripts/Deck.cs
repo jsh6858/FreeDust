@@ -8,6 +8,18 @@ public class Deck : MonoBehaviour {
 
     protected Card[] _cards;
 
+    UIGrid _grid;
+    UIGrid grid
+    {
+        get
+        {
+            if(null == _grid)
+                _grid = transform.Find("Cards").GetComponent<UIGrid>();
+            return _grid;
+        }
+    }
+
+
     public Card[] Get_Deck()
     {
         return _cards;
@@ -28,22 +40,8 @@ public class Deck : MonoBehaviour {
                 _cards[i] = temp.GetComponent<Card>();
                 _cards[i].Set_CardType(cardTypes[i]);
             }
-            trParent.GetComponent<UIGrid>().Reposition();
-        }
-    }
-
-    public void Select_Card(int index)
-    {
-        for(int i=0; i<_cards.Length; ++i)
-        {
-            if(i == index)
-            {
-                _cards[i].OnSelected();
-            }
-            else
-            {
-                _cards[i].onDeSelected();
-            }
+            grid.Reposition();
+            grid.animateSmoothly = true;
         }
     }
 
@@ -56,5 +54,23 @@ public class Deck : MonoBehaviour {
         }
 
         return null;
+    }
+
+    public Card Get_LeftmostCard()
+    {
+        for(int i=0; i<_cards.Length; ++i)
+        {
+            if(!_cards[i]._bUsed)
+                return _cards[i];
+        }
+
+        return null;
+    }
+
+    public void UseCard(Card card)
+    {
+        card._bUsed = true;
+        card.gameObject.SetActive(false);
+        _grid.Reposition();
     }
 }

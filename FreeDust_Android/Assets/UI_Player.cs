@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class UI_Player : UI_Parent {
 
-    private void Start()
-    {
-        Singleton.inGameManager._uiPlayer = this;
-    }
 }

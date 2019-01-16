@@ -7,4 +7,6 @@ public static class Singleton {
 	public static InGameManager inGameManager;
 
 	public static AIManager aiManager;
+
+	public static PopUpManager popUpManager;
 }

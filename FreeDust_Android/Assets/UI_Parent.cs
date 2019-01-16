@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class UI_Parent : MonoBehaviour {
 
-	SelectCardView _SelectCardView;
-	SelectCardView SelectCardView
+	public SelectCardView _SelectCardView;
+
+	public void SetCardView(CARD_TYPE type)
 	{
-		get
-		{
-			if(null == _SelectCardView)
-				_SelectCardView = transform.Find("Card_Select").GetComponent<SelectCardView>();
-			return _SelectCardView;
-		}
+		_SelectCardView.SetType(type);
 	}
 
 	public void Set_CardSelect_CardType(CARD_TYPE type)
 	{
-		SelectCardView.SetType(type);
+		_SelectCardView.SetType(type);
 
-		SelectCardView.PlayAnim();
+		_SelectCardView.PlayAnim();
 	}
 }

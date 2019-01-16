@@ -6,7 +6,7 @@ public class EnemyDeck : Deck {
     
     void Awake()
     {
-        Set_Deck(Singleton.aiManager.Get_EnemyTypeRandom());
+        //Set_Deck(Singleton.aiManager.Get_EnemyTypeRandom());
     }
 
     void Start()

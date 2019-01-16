@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class UI_Enemy : UI_Parent {
 
-    private void Start()
-    {
-        Singleton.inGameManager._uiEnemy = this;
-    }
 }

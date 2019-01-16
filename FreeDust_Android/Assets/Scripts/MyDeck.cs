@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class MyDeck : Deck {
 
+    int _iSelectedCard;
+
+    CardInfo _cardInfo;
+    CardInfo cardInfo
+    {
+        get
+        {
+            if(null == _cardInfo)
+            {
+                GameObject obj = Instantiate(Resources.Load("Prefab/CardInfo") as GameObject, Vector3.zero, Quaternion.identity);
+                obj.transform.SetParent(transform, false);
+                obj.layer = (int)LAYER.Card;
+
+                _cardInfo = obj.GetComponent<CardInfo>();
+            }
+            return _cardInfo;
+        }
+    }
+
     float _fTime = 0f;
 
     void Start()
@@ -22,8 +41,15 @@ public class MyDeck : Deck {
 
             EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onClick, selectEvent);
 
-            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onPress, Press);
-            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onDragOut, Release);
+            selectEvent = new EventDelegate(this, "Press");
+            selectEvent.parameters[0].value = i;
+
+            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onHoverOver, selectEvent);
+
+            selectEvent = new EventDelegate(this, "Release");
+            selectEvent.parameters[0].value = i;
+
+            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onHoverOut, selectEvent);
         }
     }
     
@@ -44,15 +70,20 @@ public class MyDeck : Deck {
         }
     }
 
-    public void Press()
+
+    public void Press(int index)
     {
-        Debug.Log("Press!");
+        //Debug.Log("Press!");
+
+        _iSelectedCard = index;
 
         _fTime = 0.5f;
     }
-    public void Release()
+    public void Release(int index)
     {
-        Debug.Log("Release!");
+        //Debug.Log("Release!");
+
+        _iSelectedCard = -1;
 
         _fTime = -1f;
     }
@@ -65,10 +96,21 @@ public class MyDeck : Deck {
 
             if(_fTime < 0f)
             {
-                Debug.Log("Show CardInfo");
+                Debug.Log("Show CardInfo " + _iSelectedCard);
+
+                ShowCardInfo();
 
                 _fTime = -1f;
             }
         }
+    }
+
+    void ShowCardInfo()
+    {
+        cardInfo.gameObject.SetActive(true);
+
+        cardInfo.transform.localPosition = new Vector2(_cards[_iSelectedCard].transform.localPosition.x, 260f);
+
+        
     }
 }

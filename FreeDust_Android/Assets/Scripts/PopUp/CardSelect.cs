@@ -37,7 +37,7 @@ public class CardSelect : MonoBehaviour {
         {
             GameObject temp = Instantiate(prefab, Vector3.zero, Quaternion.identity, trParent);
 
-            temp.layer = 20; // Popup Layer
+            temp.layer = (int)LAYER.PopUp;
 
             _cards[i] = temp.GetComponent<Card>();
             _cards[i].Set_CardType(CARD_TYPE.END);

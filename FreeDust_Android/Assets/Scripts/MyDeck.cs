@@ -14,8 +14,8 @@ public class MyDeck : Deck {
             if(null == _cardInfo)
             {
                 GameObject obj = Instantiate(Resources.Load("Prefab/CardInfo") as GameObject, Vector3.zero, Quaternion.identity);
+                obj.layer = LayerMask.NameToLayer("Card");
                 obj.transform.SetParent(transform, false);
-                obj.layer = (int)LAYER.Card;
 
                 _cardInfo = obj.GetComponent<CardInfo>();
             }
@@ -23,11 +23,27 @@ public class MyDeck : Deck {
         }
     }
 
+    public BoxCollider _boxCollider;
+
     float _fTime = 0f;
 
     void Start()
     {
         Singleton.inGameManager._myDeck = this;
+
+        _boxCollider = transform.Find("Collider").GetComponent<BoxCollider>();
+
+        Singleton.inGameManager.gameChanged += delegate(GAME_STATE state)
+        {
+            if(state == GAME_STATE.CARD_SELECT)
+            {
+                _boxCollider.enabled = false;
+            }
+            else
+            {
+                _boxCollider.enabled = true;
+            }
+        };
     }
 
     public override void Set_Deck(CARD_TYPE[] cardTypes)
@@ -61,7 +77,8 @@ public class MyDeck : Deck {
             {
                 _cards[i].OnSelected();
 
-                Singleton.inGameManager._uiPlayer.SetCardView(_cards[i]._cardType); // CardView
+                Singleton.inGameManager._uiPlayer._SelectCardView.SetType(_cards[i]._cardType); // CardView
+                Singleton.inGameManager._uiPlayer._BlackSprite.SetActive(false); // OkButton
             }
             else
             {
@@ -70,10 +87,9 @@ public class MyDeck : Deck {
         }
     }
 
-
     public void Press(int index)
     {
-        //Debug.Log("Press!");
+        //LogManager.Log("Press!");
 
         _iSelectedCard = index;
 
@@ -81,7 +97,7 @@ public class MyDeck : Deck {
     }
     public void Release(int index)
     {
-        //Debug.Log("Release!");
+        //LogManager.Log("Release!");
 
         _iSelectedCard = -1;
 
@@ -96,21 +112,12 @@ public class MyDeck : Deck {
 
             if(_fTime < 0f)
             {
-                Debug.Log("Show CardInfo " + _iSelectedCard);
+                LogManager.Log("Show CardInfo " + _iSelectedCard);
 
-                ShowCardInfo();
+                cardInfo.SetCardInfo(_cards[_iSelectedCard]);
 
                 _fTime = -1f;
             }
         }
-    }
-
-    void ShowCardInfo()
-    {
-        cardInfo.gameObject.SetActive(true);
-
-        cardInfo.transform.localPosition = new Vector2(_cards[_iSelectedCard].transform.localPosition.x, 260f);
-
-        
     }
 }

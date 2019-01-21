@@ -32,6 +32,53 @@ public class SelectCardView : MonoBehaviour {
         }
     }
 
+	GameObject _back;
+	GameObject back
+	{
+		get
+		{
+			if(null == _back)
+				_back = transform.Find("Back").gameObject;
+			return _back;
+		}
+		
+	}
+	GameObject _front;
+	GameObject front
+	{
+		get
+		{
+			if(null == _front)
+				_front = transform.Find("Front").gameObject;
+			return _front;
+		}
+	}
+
+	GameObject _scrollView;
+	GameObject scrollView
+	{
+		get
+		{
+			if(null == _scrollView)
+			{
+				_scrollView = transform.Find("Scrollview").gameObject;
+
+				_scrollView.transform.Find("Grid").GetComponent<UICenterOnChild>().onCenter += CenterCallBack;
+			}
+			return _scrollView;
+		}
+	}
+	
+	void Start()
+	{
+	}
+
+	public void SetFront(bool b)
+	{
+		front.SetActive(b);
+		back.SetActive(!b);	
+	}
+	
 	public void SetType(CARD_TYPE type)
 	{
 		for(int i=0; i<objType.Length; ++i)
@@ -42,9 +89,60 @@ public class SelectCardView : MonoBehaviour {
 				_objType[i].SetActive(false);
 		}
 	}
-
-	public void PlayAnim()
+	public IEnumerator PlayAnim(string anim)
 	{
-		animator.Play("Open");
+		animator.enabled = true;
+		animator.Play(anim);
+
+		yield return new WaitForEndOfFrame();
+
+		while(true)
+		{
+			if(animator.GetCurrentAnimatorStateInfo(0).IsName(anim))
+			{
+				yield return null;
+			}
+			else
+				break;
+		}
+
+		animator.enabled = false;
+		yield break;
 	}
+
+	public void SetSelectCardMode(bool b)
+	{
+		scrollView.SetActive(b);
+
+		if(b == true)
+		{
+			SetFront(false);
+
+			Card lastCard = Singleton.inGameManager._myDeck.Get_LeftmostCard();
+			scrollView.transform.Find("Grid").GetComponent<UICenterOnChild>().CenterOn(scrollView.transform.Find("Grid").GetChild((int)lastCard._cardType));
+		}
+	}
+
+
+	void CenterCallBack(GameObject centeredObject)
+    {
+        Card card = Singleton.inGameManager._myDeck.Get_LeftmostCard();
+        if(card == null)
+            return;
+
+        switch(centeredObject.name)
+        {
+            case "Attack":
+                card.Set_CardType(CARD_TYPE.ATTACK);
+                break;
+            case "Defend":
+                card.Set_CardType(CARD_TYPE.DEFEND);
+                break;
+            case "Heal":
+                card.Set_CardType(CARD_TYPE.HEAL);
+                break;
+        }
+    }
+
+
 }

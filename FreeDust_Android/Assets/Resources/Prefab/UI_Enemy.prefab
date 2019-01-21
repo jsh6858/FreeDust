@@ -185,22 +185,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1372187991978386
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4662804189609368}
-  - component: {fileID: 114351844445382914}
-  m_Layer: 10
-  m_Name: Minus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1382909449098578
 GameObject:
   m_ObjectHideFlags: 1
@@ -240,8 +224,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663659696612298}
-  - component: {fileID: 95885368935512410}
   - component: {fileID: 114736293652154740}
+  - component: {fileID: 95885368935512410}
   m_Layer: 10
   m_Name: Card_Select
   m_TagString: Untagged
@@ -1003,19 +987,6 @@ Transform:
   m_Father: {fileID: 4896051896272674}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4662804189609368
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372187991978386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
-  m_Children: []
-  m_Father: {fileID: 4836771298194086}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4663659696612298
 Transform:
   m_ObjectHideFlags: 1
@@ -1166,7 +1137,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4691324164466920}
-  - {fileID: 4662804189609368}
   m_Father: {fileID: 4818494729247302}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1251,7 +1221,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430534849869746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5e9e934e7b136fb4c8ca2a5b14eaff10, type: 2}
   m_CullingMode: 0
@@ -1636,74 +1606,6 @@ MonoBehaviour:
   mAtlas: {fileID: 114824562704967856, guid: fd13e9ea64e83a04d90858688660d35c, type: 2}
   mSpriteName: Ui_Noraml_Card_Name_Defend
   mFillCenter: 1
---- !u!114 &114351844445382914
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372187991978386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  rightAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  bottomAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  topAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  updateAnchors: 1
-  mColor: {r: 1, g: 0.15351716, b: 0, a: 1}
-  mPivot: 4
-  mWidth: 30
-  mHeight: 60
-  mDepth: 413
-  mMat: {fileID: 2100000, guid: 07a09a317a91a36499bf82e73cc39791, type: 3}
-  autoResizeBoxCollider: 0
-  hideIfOffScreen: 0
-  keepAspectRatio: 0
-  aspectRatio: 0.5
-  keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: 07a09a317a91a36499bf82e73cc39791, type: 3}
-  mFont: {fileID: 0}
-  mText: '-'
-  mFontSize: 60
-  mFontStyle: 0
-  mAlignment: 0
-  mEncoding: 1
-  mMaxLineCount: 0
-  mEffectStyle: 0
-  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
-  mSymbols: 1
-  mEffectDistance: {x: 1, y: 1}
-  mOverflow: 2
-  mApplyGradient: 0
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
-  mSpacingX: 0
-  mSpacingY: 0
-  mUseFloatSpacing: 0
-  mFloatSpacingX: 0
-  mFloatSpacingY: 0
-  mOverflowEllipsis: 0
-  mOverflowWidth: 0
-  mModifier: 255
-  mShrinkToFit: 0
-  mMaxLineWidth: 0
-  mMaxLineHeight: 0
-  mLineWidth: 0
-  mMultiline: 1
 --- !u!114 &114352359659297880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2312,7 +2214,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8110a7dd6e7e4abb76e1f1d03e0d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hp: 0
+  _ad: 0
   _SelectCardView: {fileID: 114736293652154740}
+  _damaged: {fileID: 95548855146149200}
+  _hpDamaged: 0
+  _damagedHp: {fileID: 114881469927816214}
+  _curHp: {fileID: 114481878605493906}
 --- !u!114 &114870577384304954
 MonoBehaviour:
   m_ObjectHideFlags: 1

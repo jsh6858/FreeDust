@@ -35,9 +35,10 @@ public class CardSelect : MonoBehaviour {
 
         for (int i = 0; i < _cards.Length; ++i)
         {
-            GameObject temp = Instantiate(prefab, Vector3.zero, Quaternion.identity, trParent);
+            GameObject temp = Instantiate(prefab, Vector3.zero, Quaternion.identity);
 
-            temp.layer = (int)LAYER.PopUp;
+            NGUITools.SetLayer(temp, LayerMask.NameToLayer("PopUp"));
+            temp.transform.SetParent(trParent, false);
 
             _cards[i] = temp.GetComponent<Card>();
             _cards[i].Set_CardType(CARD_TYPE.END);
@@ -112,4 +113,19 @@ public class CardSelect : MonoBehaviour {
 
         gameObject.SetActive(false);
     }
+
+#if UNITY_EDITOR
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            for(int i=0; i<cards.Length; ++i)
+                cards[i].Set_CardType((CARD_TYPE)(Random.Range(0, (int)CARD_TYPE.END)));
+
+            ActivateButton();
+            OnClickOKButton();
+        }
+    }
+
+#endif
 }

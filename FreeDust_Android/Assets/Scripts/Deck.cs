@@ -73,4 +73,29 @@ public class Deck : MonoBehaviour {
         card.gameObject.SetActive(false);
         _grid.Reposition();
     }
+
+    // 사용안한 카드 수
+    public int LeftCount()
+    {
+        int result = 0;
+
+        for(int i=0; i<_cards.Length; ++i)
+        {
+            if(!_cards[i]._bUsed)
+                result++;
+        }
+
+        return result;
+    }
+
+    public void Reset()
+    {
+        for(int i=0; i<_cards.Length; ++i)
+        {
+            _cards[i]._bUsed = false;
+            _cards[i].gameObject.SetActive(true);
+        }
+
+        _grid.Reposition();
+    }
 }

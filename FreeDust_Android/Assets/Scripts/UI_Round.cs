@@ -31,8 +31,8 @@ public class UI_Round : MonoBehaviour {
 	{
 		_roundCount.text = iRound.ToString();
 
-		_remainingTime = 30;
-		_timer.text = "30";
+		_remainingTime = 15;
+		_timer.text = _remainingTime.ToString();
 
 		fTime = 1f;
 

@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour {
+public static class SceneChangeManager {
 
-	public void OnClickOKButton()
+	public static void Change_Scene(string scene)
 	{
-		SceneChangeManager.Change_Scene("Proto");
+		SceneManager.LoadSceneAsync(scene);
 	}
-
-
 }

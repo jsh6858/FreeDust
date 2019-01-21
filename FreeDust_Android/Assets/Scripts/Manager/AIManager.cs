@@ -11,7 +11,17 @@ public class AIManager : MonoBehaviour {
 
     public Card Choose_Random(Card[] cards)
     {
-        return cards[Random.Range(0, cards.Length)];
+        Card card;
+
+        while(true)
+        {
+            card = cards[Random.Range(0, cards.Length)];
+
+            if(card._bUsed == false)
+                break;
+        }
+
+        return card;
     }
 
     public CARD_TYPE[] Get_EnemyTypeRandom()

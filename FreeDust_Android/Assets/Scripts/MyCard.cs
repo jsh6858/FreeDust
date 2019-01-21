@@ -15,15 +15,21 @@ public class MyCard : Card {
     {
         base.OnSelected();
 
-        _animator.enabled = true;
-        _animator.Play("Card_Push");
+        if(gameObject.activeSelf)
+        {
+            _animator.enabled = true;
+            _animator.Play("Card_Push");
+        }
     }
 
     public override void onDeSelected()
     {
         base.onDeSelected();
 
-        _animator.Rebind();
-        _animator.enabled = false;
+        if(gameObject.activeSelf)
+        {
+            _animator.Rebind();
+            _animator.enabled = false;
+        }
     }
 }

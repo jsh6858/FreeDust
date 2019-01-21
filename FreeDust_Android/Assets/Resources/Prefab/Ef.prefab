@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4413644535149212}
   - component: {fileID: 114112052570877324}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,13 +35,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4067424830089192}
+  - component: {fileID: 114190447453914352}
   m_Layer: 9
   m_Name: Ef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1366878660601966
 GameObject:
   m_ObjectHideFlags: 1
@@ -51,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4224016994949824}
   - component: {fileID: 114754826630325738}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4914410081368608}
   - component: {fileID: 114558030286369096}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4002071468643240}
   - component: {fileID: 114771574663826924}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4642655779639800}
   - component: {fileID: 114933166565001380}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,6 +292,18 @@ MonoBehaviour:
   mAtlas: {fileID: 114359662244531068, guid: 87ae115e84c83f741933a86959f66426, type: 2}
   mSpriteName: Ef_Attack_04
   mFillCenter: 1
+--- !u!114 &114190447453914352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1188945811288346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7118b6f0e74b4723b1eca91a5f79045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 95359149726796790}
 --- !u!114 &114558030286369096
 MonoBehaviour:
   m_ObjectHideFlags: 1

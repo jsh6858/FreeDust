@@ -25,17 +25,10 @@ public enum GAME_STATE
     END,
 }
 
-public enum LAYER
+public enum BATTLE_RESULT
 {
-    NGUI = 8,
-
-    MainUI = 10,
-
-    Back = 11,
-
-    Player = 12,
-
-    Card = 13,
-
-    PopUp = 20,
+    WIN,
+    DRAW,
+    LOSE,
+    END
 }

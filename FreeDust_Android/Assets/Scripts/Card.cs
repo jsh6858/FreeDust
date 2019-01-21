@@ -25,8 +25,10 @@ public class Card : MonoBehaviour {
 
     public GameObject _objSelect;
 
+    public bool _bEnhanced = false;
     public bool _bSelected = false;
     public bool _bUsed = false;
+
     
     void Awake ()
     {
@@ -48,16 +50,8 @@ public class Card : MonoBehaviour {
 
     public virtual void OnSelected()
     {
-        if(false == _bSelected)
-        {
-            _objSelect.SetActive(true);
-            _bSelected = true;
-        }
-        else
-        {
-            Singleton.inGameManager.Start_Battle();
-        }
-
+        _objSelect.SetActive(true);
+        _bSelected = true;
     }
 
     public virtual void onDeSelected()

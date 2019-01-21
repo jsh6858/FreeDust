@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyPlayer : MonoBehaviour {
+public class MyPlayer : Player {
 
-    public Animator _animator;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +13,15 @@ public class MyPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.A))
+		if(Input.GetKeyDown(KeyCode.B))
         {
             _animator.Play("At_Dr_Ready");
         }
+
+		if(Input.GetKeyDown(KeyCode.C))
+        {
+            _animator.Play("At_Dr_Back");
+        }
 	}
 }
+

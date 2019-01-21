@@ -25,7 +25,9 @@ public class Card : MonoBehaviour {
 
     public GameObject _objSelect;
 
-    public bool _bEnhanced = false;
+    public GameObject _objEnhance;
+
+    public bool _bEnhanced = false; // 강화
     public bool _bSelected = false;
     public bool _bUsed = false;
 
@@ -46,6 +48,12 @@ public class Card : MonoBehaviour {
             else
                 objType[i].SetActive(false);
         }
+    }
+
+    public void Enhance(bool b)
+    {
+        _bEnhanced = b;
+        _objEnhance.SetActive(b);
     }
 
     public virtual void OnSelected()

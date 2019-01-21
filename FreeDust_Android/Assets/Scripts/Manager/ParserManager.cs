@@ -33,6 +33,7 @@ public static class ParserManager {
 		HP = 2000f;
 		AD = 100f;
 		TC = new float[3][] { new float[] { 1.3f, 1f, 0f}, new float[] { 1.5f, 0f, 0f},new float[] { 1.6f, 1f, 0f},};
+		TE = new float[3] { 1.7f, 1.7f, 1.7f};
 
 		FC = 1.15f;
 		QC = new float[] { 1f, 1.15f, 1.3f, 1.45f, 1.6f, 1.75f, 1.9f, 2.05f, 2.20f, 2.5f};

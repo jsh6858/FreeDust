@@ -35,7 +35,7 @@ public class MyDeck : Deck {
 
         Singleton.inGameManager.gameChanged += delegate(GAME_STATE state)
         {
-            if(state == GAME_STATE.CARD_SELECT)
+            if(state != GAME_STATE.BATTLE)
             {
                 _boxCollider.enabled = false;
             }

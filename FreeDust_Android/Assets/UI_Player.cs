@@ -25,5 +25,7 @@ public class UI_Player : UI_Parent {
         
         if(Singleton.inGameManager._gameState == GAME_STATE.CARD_SELECT)
             Singleton.inGameManager.Start_Battle();
+        if(Singleton.inGameManager._gameState == GAME_STATE.ROUND_READY)
+            Singleton.inGameManager.NextQuarter();
     }
 }

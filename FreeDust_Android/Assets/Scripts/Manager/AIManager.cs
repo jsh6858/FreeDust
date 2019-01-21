@@ -24,7 +24,7 @@ public class AIManager : MonoBehaviour {
         return card;
     }
 
-    public CARD_TYPE[] Get_EnemyTypeRandom()
+    public CARD_TYPE[] Get_EnemyTypeRandom() // 5개 카드속성 return
     {
         CARD_TYPE[] type = new CARD_TYPE[Constants.DECK_MAX_COUNT];
 
@@ -33,4 +33,28 @@ public class AIManager : MonoBehaviour {
 
         return type;
     }
+
+    public Card Get_CardToEnhance(Card[] cards) // 강화할 카드
+    {
+        for(int i=0; i<cards.Length; ++i)
+        {
+            if(false == cards[i]._bEnhanced) // 강화할 카드가 하나라도 있으면,
+            {
+                Card card = null;
+
+                while(true)
+                {
+                    card = cards[Random.Range(0, cards.Length)];
+
+                    if(card._bEnhanced == false)
+                        break;
+                }
+
+                return card;
+            }
+        }
+
+        return null;
+    }
+    
 }

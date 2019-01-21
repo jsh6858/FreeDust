@@ -6,9 +6,31 @@ public class MyCard : Card {
     
     Animator _animator;
 
+    public GameObject _blackSprite;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+
+        _blackSprite = transform.Find("Image/BlackSprite").gameObject;
+    }
+
+    void Start()
+    {
+        // 강화된 카드는 또 강화 불가 (선택 불가)
+        Singleton.inGameManager.gameChanged += delegate(GAME_STATE state)
+        {
+            if(state == GAME_STATE.ROUND_READY)
+            {
+                if(_bEnhanced)
+                    _blackSprite.SetActive(true);
+                else
+                    _blackSprite.SetActive(false);
+            }
+            else
+            {
+                _blackSprite.SetActive(false);
+            }
+        };
     }
     
     public override void OnSelected()

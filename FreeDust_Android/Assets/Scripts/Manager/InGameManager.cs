@@ -16,7 +16,6 @@ public class InGameManager : MonoBehaviour {
 
     public MyPlayer _myPlayer;
     public EnemyPlayer _enemyPlayer;
-
     public Effect_Attack _effectAttack;
 
     GAME_STATE gameState;
@@ -179,7 +178,6 @@ public class InGameManager : MonoBehaviour {
         // Select View
         _uiPlayer._SelectCardView.SetType(CARD_TYPE.END);
         _uiPlayer._SelectCardView.SetFront(true);
-
         _uiEnemy._SelectCardView.SetType(CARD_TYPE.END);
         _uiEnemy._SelectCardView.SetFront(false);
 
@@ -193,15 +191,60 @@ public class InGameManager : MonoBehaviour {
     void CardChangeMode()
     {
         _uiPlayer._SelectCardView.SetSelectCardMode(true);
+        _uiPlayer._BlackSprite.SetActive(false);
 
-        _enemyDeck.Get_LeftmostCard()._cardType = (CARD_TYPE)Random.Range(0, (int)CARD_TYPE.END);
+        gameChanged += delegate(GAME_STATE state) // 경기 시작할 때 적 카드 변경
+        {
+            if(state == GAME_STATE.BATTLE)
+            {
+                _enemyDeck.Get_LeftmostCard().Set_CardType((CARD_TYPE)Random.Range(0, (int)CARD_TYPE.END));
+
+                gameChanged -= gameChanged.GetInvocationList()[gameChanged.GetInvocationList().GetLength(0) - 1] as StateChange;
+            }
+        };
     }
 
     // 카드 강화
     void EnhanceCardMode()
     {
+        _gameState = GAME_STATE.ROUND_READY;
+
         _myDeck.Reset();
         _enemyDeck.Reset();
+
+        // 강화할 카드가 없으면 시작버튼 활성화
+        if(Singleton.aiManager.Get_CardToEnhance(_myDeck.Get_Deck()) == null) 
+            _uiPlayer._BlackSprite.SetActive(false);
+    }
+
+    public void NextQuarter()
+    {
+        // Next Quarter
+        _quarter++;
+        _attribute = (CARD_TYPE)Random.Range(0, (int)CARD_TYPE.END);
+        _uiRound.SetRound(_quarter, (int)_attribute);
+
+        // Select View
+        _uiPlayer._SelectCardView.SetType(CARD_TYPE.END);
+        _uiPlayer._SelectCardView.SetFront(true);
+        _uiEnemy._SelectCardView.SetType(CARD_TYPE.END);
+        _uiEnemy._SelectCardView.SetFront(false);
+
+        // 내 카드 강화
+        Card myCard = _myDeck.Get_SelectedCard();
+        if(null != myCard)
+        {
+            myCard.Enhance(true);
+            myCard.onDeSelected();
+        }
+
+        // 적 카드 강화
+        Card enemyCard = Singleton.aiManager.Get_CardToEnhance(_enemyDeck.Get_Deck());
+        if (null != enemyCard) 
+            enemyCard.Enhance(true);
+
+        // Card Select
+        _gameState = GAME_STATE.CARD_SELECT;
     }
 
 

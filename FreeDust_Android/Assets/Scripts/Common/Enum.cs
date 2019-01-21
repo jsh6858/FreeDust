@@ -14,13 +14,12 @@ public enum CARD_TYPE
 
 public enum GAME_STATE
 {
-    READY,
 
-    CARD_SELECT,
+    CARD_SELECT, // 카드 고르기
 
-    BATTLE,
+    BATTLE, // 전투 Animation
 
-    CHANGE_CARD,
+    ROUND_READY, // 카드 강화
 
     END,
 }

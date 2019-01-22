@@ -23,9 +23,6 @@ public class UI_Player : UI_Parent {
     {
         _BlackSprite.SetActive(true);
         
-        if(Singleton.inGameManager._gameState == GAME_STATE.CARD_SELECT)
-            Singleton.inGameManager.Start_Battle();
-        if(Singleton.inGameManager._gameState == GAME_STATE.ROUND_READY)
-            Singleton.inGameManager.NextQuarter();
+        Singleton.inGameManager.Start_Battle();
     }
 }

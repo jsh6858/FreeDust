@@ -55,8 +55,9 @@ public class InGameManager : MonoBehaviour {
         _gameState = GAME_STATE.END;
     }
 
+
     // 전투 Anim 시작
-    public void Start_Battle()
+    void Battle_Animation()
     {
         if(_gameState != GAME_STATE.CARD_SELECT)
             return;
@@ -122,6 +123,47 @@ public class InGameManager : MonoBehaviour {
         StartCoroutine(Play_Anim(BattleManager.Get_BattleResult(myType, enemyType)));
     }
 
+    public void NextQuarter()
+    {
+        // Card Select
+        _gameState = GAME_STATE.CARD_SELECT;
+
+        // Next Quarter
+        _quarter++;
+        _attribute = (CARD_TYPE)Random.Range(0, (int)CARD_TYPE.END);
+        _uiRound.SetRound(_quarter, (int)_attribute);
+
+        // Select View
+        _uiPlayer._SelectCardView.SetType(CARD_TYPE.END);
+        _uiPlayer._SelectCardView.SetFront(true);
+        _uiEnemy._SelectCardView.SetType(CARD_TYPE.END);
+        _uiEnemy._SelectCardView.SetFront(false);
+
+        // 내 카드 강화
+        Card myCard = _myDeck.Get_SelectedCard();
+        if(null != myCard)
+        {
+            myCard.Enhance(true);
+            myCard.onDeSelected();
+        }
+
+        // 적 카드 강화
+        Card enemyCard = Singleton.aiManager.Get_CardToEnhance(_enemyDeck.Get_Deck());
+        if (null != enemyCard) 
+            enemyCard.Enhance(true);
+
+        
+    }
+
+    // OK 버튼 누르거나, 시간 다 되었을때
+    public void Start_Battle()
+    {
+        if(_gameState == GAME_STATE.CARD_SELECT) // 배틀 Anim 시작!
+            Battle_Animation();
+        if(_gameState == GAME_STATE.ROUND_READY) // 다음 쿼터로
+            NextQuarter();
+    }
+
     IEnumerator Play_Anim(BATTLE_RESULT result)
     {
         // 달려가기
@@ -160,7 +202,22 @@ public class InGameManager : MonoBehaviour {
         StartCoroutine(_uiPlayer.PlayHpAnim());
         StartCoroutine(_uiEnemy.PlayHpAnim());
 
-        AnimFinish();
+        if(_uiPlayer._hp <= 0f && _uiEnemy._hp <= 0f) // 듀스
+        {
+            (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("듀스", 0.5f, true);
+
+            
+        }
+        else if(_uiPlayer._hp <= 0f)
+        {
+            (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("LOSE", 1f, true);
+        }
+        else if(_uiEnemy._hp <= 0f)
+        {
+            (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("WIN", 1f, true);
+        }
+        else
+            AnimFinish();
 
         yield return null;
     }
@@ -190,6 +247,8 @@ public class InGameManager : MonoBehaviour {
     // 카드 변경
     void CardChangeMode()
     {
+        (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("카드를\n 교체하세요", 1f);
+
         _uiPlayer._SelectCardView.SetSelectCardMode(true);
         _uiPlayer._BlackSprite.SetActive(false);
 
@@ -207,6 +266,8 @@ public class InGameManager : MonoBehaviour {
     // 카드 강화
     void EnhanceCardMode()
     {
+        (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("카드를\n 강화하세요", 1f);
+
         _gameState = GAME_STATE.ROUND_READY;
 
         _myDeck.Reset();
@@ -217,35 +278,7 @@ public class InGameManager : MonoBehaviour {
             _uiPlayer._BlackSprite.SetActive(false);
     }
 
-    public void NextQuarter()
-    {
-        // Next Quarter
-        _quarter++;
-        _attribute = (CARD_TYPE)Random.Range(0, (int)CARD_TYPE.END);
-        _uiRound.SetRound(_quarter, (int)_attribute);
-
-        // Select View
-        _uiPlayer._SelectCardView.SetType(CARD_TYPE.END);
-        _uiPlayer._SelectCardView.SetFront(true);
-        _uiEnemy._SelectCardView.SetType(CARD_TYPE.END);
-        _uiEnemy._SelectCardView.SetFront(false);
-
-        // 내 카드 강화
-        Card myCard = _myDeck.Get_SelectedCard();
-        if(null != myCard)
-        {
-            myCard.Enhance(true);
-            myCard.onDeSelected();
-        }
-
-        // 적 카드 강화
-        Card enemyCard = Singleton.aiManager.Get_CardToEnhance(_enemyDeck.Get_Deck());
-        if (null != enemyCard) 
-            enemyCard.Enhance(true);
-
-        // Card Select
-        _gameState = GAME_STATE.CARD_SELECT;
-    }
+    
 
 
     // 5개 카드 선택

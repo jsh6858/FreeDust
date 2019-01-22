@@ -42,20 +42,20 @@ public class UI_Round : MonoBehaviour {
 
 	void Update()
 	{
-		if(Singleton.inGameManager._gameState != GAME_STATE.CARD_SELECT)
-			return;
-
-		fTime -= Time.deltaTime;
-		if(fTime < 0f)
+		if(Singleton.inGameManager._gameState == GAME_STATE.CARD_SELECT || // 시간이 흐르는 조건
+			Singleton.inGameManager._gameState == GAME_STATE.ROUND_READY)	
 		{
-			fTime = 1f;
-			_remainingTime--;
+			fTime -= Time.deltaTime;
+			if(fTime < 0f)
+			{
+				fTime = 1f;
+				_remainingTime--;
 
-			_timer.text = _remainingTime.ToString();
+				_timer.text = _remainingTime.ToString();
 
-			if(_remainingTime == 0)
-				Singleton.inGameManager.Start_Battle();
+				if(_remainingTime == 0)
+					Singleton.inGameManager.Start_Battle();
+			}
 		}
-
 	}
 }

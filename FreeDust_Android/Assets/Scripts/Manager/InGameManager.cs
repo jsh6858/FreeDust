@@ -200,21 +200,23 @@ public class InGameManager : MonoBehaviour {
 
         // 체력 감소
         StartCoroutine(_uiPlayer.PlayHpAnim());
-        StartCoroutine(_uiEnemy.PlayHpAnim());
+        yield return StartCoroutine(_uiEnemy.PlayHpAnim());
 
         if(_uiPlayer._hp <= 0f && _uiEnemy._hp <= 0f) // 듀스
         {
-            (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("듀스", 0.5f, true);
+            (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("듀스", 0.5f, false);
 
             
         }
         else if(_uiPlayer._hp <= 0f)
         {
             (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("LOSE", 1f, true);
+            Singleton.popUpManager.Get_PopUp("SystemMessage").SetCallBackFunc(gameObject, "GoToMain");
         }
         else if(_uiEnemy._hp <= 0f)
         {
             (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("WIN", 1f, true);
+            Singleton.popUpManager.Get_PopUp("SystemMessage").SetCallBackFunc(gameObject, "GoToMain");
         }
         else
             AnimFinish();
@@ -306,6 +308,11 @@ public class InGameManager : MonoBehaviour {
         _enemyDeck.Set_Deck(Singleton.aiManager.Get_EnemyTypeRandom()); // 적 카드 (PVE)
     }
 
+    public void GoToMain()
+    {
+        SceneChangeManager.Change_Scene("Main");
+    }
+
 #if UNITY_EDITOR
     void Update()
     {
@@ -329,4 +336,5 @@ public class InGameManager : MonoBehaviour {
         }
     }
 #endif
+
 }

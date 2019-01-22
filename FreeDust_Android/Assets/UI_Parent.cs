@@ -61,7 +61,6 @@ public class UI_Parent : MonoBehaviour {
 			if(fTime > 1f)
 				break;
 
-			_hp = hpCur + hpDamaged * fTime;
 			_curHp.text = ((int)_hp).ToString();
 
 			yield return null;

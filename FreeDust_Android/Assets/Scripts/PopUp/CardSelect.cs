@@ -114,6 +114,12 @@ public class CardSelect : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
+    public void OnClickDeveloperMode()
+    {
+        gameObject.SetActive(false);
+        Singleton.popUpManager.Get_PopUp("DeveloperMode").gameObject.SetActive(true);
+    }
+
 #if UNITY_EDITOR
     void Update()
     {

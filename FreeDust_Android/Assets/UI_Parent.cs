@@ -15,6 +15,8 @@ public class UI_Parent : MonoBehaviour {
 	public UILabel _damagedHp;
 	public UILabel _curHp;
 
+    public Skill_Change _skill;
+
 	void Awake()
 	{
 		_hp = ParserManager.HP;
@@ -61,7 +63,8 @@ public class UI_Parent : MonoBehaviour {
 			if(fTime > 1f)
 				break;
 
-			_curHp.text = ((int)_hp).ToString();
+            _hp += Time.deltaTime * hpDamaged;
+            _curHp.text = ((int)_hp).ToString();
 
 			yield return null;
 		}
@@ -69,7 +72,9 @@ public class UI_Parent : MonoBehaviour {
 		_hp = hpCur + hpDamaged;
 		_curHp.text = ((int)_hp).ToString();
 
-		yield break;
+        _hpDamaged = 0;
+
+        yield break;
 	}
 
 	

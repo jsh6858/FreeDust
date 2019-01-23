@@ -65,6 +65,7 @@ public class MyDeck : Deck {
             selectEvent = new EventDelegate(this, "Release");
             selectEvent.parameters[0].value = i;
 
+            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onRelease, selectEvent);
             EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onHoverOut, selectEvent);
         }
     }
@@ -89,15 +90,15 @@ public class MyDeck : Deck {
 
     public void Press(int index)
     {
-        //LogManager.Log("Press!");
+        LogManager.Log("Press!");
 
         _iSelectedCard = index;
 
-        _fTime = 0.5f;
+        _fTime = 1f;
     }
     public void Release(int index)
     {
-        //LogManager.Log("Release!");
+        LogManager.Log("Release!");
 
         _iSelectedCard = -1;
 

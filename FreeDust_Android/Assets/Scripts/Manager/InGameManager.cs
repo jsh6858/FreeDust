@@ -77,36 +77,48 @@ public class InGameManager : MonoBehaviour {
             enemyCard = Singleton.aiManager.Choose_Random(_enemyDeck.Get_Deck());
         enemyCard._bUsed = true;
 
-        CARD_TYPE myType = myCard._cardType;
-        CARD_TYPE enemyType = enemyCard._cardType;
+        LogManager.Log("my : " + myCard._cardType + "\nenemy : " + enemyCard._cardType);
 
-        LogManager.Log("my : " + myType + "\nenemy : " + enemyType);
+        // Use Card
+        _myDeck.UseCard(myCard);
+        _enemyDeck.UseCard(enemyCard);
 
         // 스킬 확인
+        if(_uiPlayer._skill._bActivated)
+        {
+            _uiPlayer._skill.UseSkill();
+            UsefulFunction.SwapCard(ref myCard, ref enemyCard);
 
+            LogManager.Log("나 스킬 사용");
+        }
+        if(Singleton.aiManager.EnemyUseSkill(_enemyDeck, _uiEnemy))
+        {
+            _uiEnemy._skill.UseSkill();
+            UsefulFunction.SwapCard(ref myCard, ref enemyCard);
 
-
+            LogManager.Log("적 스킬 사용");
+        }
 
         // Select View     
-        _uiPlayer._SelectCardView.SetType(myType);
+        _uiPlayer._SelectCardView.SetType(myCard._cardType);
         _uiPlayer._SelectCardView.SetFront(false);
         _uiPlayer._SelectCardView.SetSelectCardMode(false);
-        _uiEnemy._SelectCardView.SetType(enemyType);
+        _uiEnemy._SelectCardView.SetType(enemyCard._cardType);
         _uiEnemy._SelectCardView.SetFront(false);
 
         // Damage
-        float damageToMe = BattleManager.Get_Damage(enemyCard, _uiEnemy, myType);
-        float damageToEnemy = BattleManager.Get_Damage(myCard, _uiPlayer, enemyType);
+        float damageToMe = BattleManager.Get_Damage(enemyCard, _uiEnemy, myCard._cardType);
+        float damageToEnemy = BattleManager.Get_Damage(myCard, _uiPlayer, enemyCard._cardType);
 
         float resultToMe = damageToMe;
         float resultToEnemy = damageToEnemy;
 
-        if(enemyType == CARD_TYPE.HEAL)
+        if (enemyCard._cardType == CARD_TYPE.HEAL)
         {
             resultToMe -= damageToMe / 2f;
             resultToEnemy -= damageToMe / 2f;
         }
-        if(myType == CARD_TYPE.HEAL)
+        if(myCard._cardType == CARD_TYPE.HEAL)
         {
             resultToEnemy -= damageToEnemy / 2f;
             resultToMe -= damageToEnemy / 2f;
@@ -114,13 +126,9 @@ public class InGameManager : MonoBehaviour {
 
         _uiPlayer._hpDamaged = -resultToMe;
         _uiEnemy._hpDamaged = -resultToEnemy;
-
-        // Use Card
-        _myDeck.UseCard(myCard);
-        _enemyDeck.UseCard(enemyCard);
-
+        
         // Anim
-        StartCoroutine(Play_Anim(BattleManager.Get_BattleResult(myType, enemyType)));
+        StartCoroutine(Play_Anim(BattleManager.Get_BattleResult(myCard._cardType, enemyCard._cardType)));
     }
 
     public void NextQuarter()
@@ -198,9 +206,12 @@ public class InGameManager : MonoBehaviour {
         StartCoroutine(_uiPlayer.PlayDamagedAnim("Damaged_Count"));
         yield return StartCoroutine(_uiEnemy.PlayDamagedAnim("Damaged_Count"));
 
+        bool b = true;
         // 체력 감소
         StartCoroutine(_uiPlayer.PlayHpAnim());
-        yield return StartCoroutine(_uiEnemy.PlayHpAnim());
+        StartCoroutine(_uiEnemy.PlayHpAnim());
+
+        yield return new WaitUntil(()=> (_uiPlayer._hpDamaged == 0) && (_uiEnemy._hpDamaged == 0));
 
         if(_uiPlayer._hp <= 0f && _uiEnemy._hp <= 0f) // 듀스
         {

@@ -343,6 +343,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1336177778383304
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4979010160299480}
+  - component: {fileID: 114782395862621434}
+  - component: {fileID: 65450893364906634}
+  m_Layer: 10
+  m_Name: BlackSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1353038439076340
 GameObject:
   m_ObjectHideFlags: 1
@@ -686,6 +703,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4136208650853462}
+  - component: {fileID: 114130997584128366}
+  - component: {fileID: 65932551182775798}
+  - component: {fileID: 114537859647928640}
   m_Layer: 10
   m_Name: Skill
   m_TagString: Untagged
@@ -1039,7 +1059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1980315825656048
 GameObject:
   m_ObjectHideFlags: 1
@@ -1204,6 +1224,7 @@ Transform:
   - {fileID: 4249166218296198}
   - {fileID: 4712334799760964}
   - {fileID: 4784129474197214}
+  - {fileID: 4979010160299480}
   m_Father: {fileID: 4136208650853462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2071,6 +2092,19 @@ Transform:
   m_Father: {fileID: 4605811201431100}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4979010160299480
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336177778383304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4097234433565594}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &65153712858137786
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2095,6 +2129,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 140, y: 200, z: 0}
   m_Center: {x: -0.000015258789, y: 2.7564087, z: 0}
+--- !u!65 &65450893364906634
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336177778383304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 88, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65519807246970380
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2131,6 +2177,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3000, y: 3000, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65932551182775798
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679830875295636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.999985, y: 94, z: 0}
+  m_Center: {x: 5.7999916, y: 6.9000015, z: 0}
 --- !u!65 &65956577470905388
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2262,6 +2320,22 @@ MonoBehaviour:
   mAtlas: {fileID: 114398340469296602, guid: 433f4ad79cf2abc45ad74aa3609a4bfb, type: 2}
   mSpriteName: Ui_Card_Color
   mFillCenter: 1
+--- !u!114 &114130997584128366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679830875295636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15189846618b1a41a07575a5a388cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coolDown: {fileID: 114294363241995320}
+  _blackSprite: {fileID: 1336177778383304}
+  _Activated: {fileID: 1312660375347876}
+  _bActivated: 0
+  _cool: 0
 --- !u!114 &114135245159603434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2442,6 +2516,7 @@ MonoBehaviour:
   _hpDamaged: 0
   _damagedHp: {fileID: 114450031925261412}
   _curHp: {fileID: 114449656788888374}
+  _skill: {fileID: 114130997584128366}
   _BlackSprite: {fileID: 0}
 --- !u!114 &114226617833974414
 MonoBehaviour:
@@ -3611,6 +3686,35 @@ MonoBehaviour:
   mAtlas: {fileID: 114398340469296602, guid: 433f4ad79cf2abc45ad74aa3609a4bfb, type: 2}
   mSpriteName: Ui_Skill_Icon_Empty
   mFillCenter: 1
+--- !u!114 &114537859647928640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679830875295636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 0}
+  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
+  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick:
+  - mTarget: {fileID: 114130997584128366}
+    mMethodName: OnclickSkill
+    mParameters: []
+    oneShot: 0
 --- !u!114 &114544962377553712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4215,6 +4319,60 @@ MonoBehaviour:
   topType: 1
   mAtlas: {fileID: 114398340469296602, guid: 433f4ad79cf2abc45ad74aa3609a4bfb, type: 2}
   mSpriteName: Ui_Card_Color
+  mFillCenter: 1
+--- !u!114 &114782395862621434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336177778383304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 0, g: 0, b: 0, a: 0.69803923}
+  mPivot: 4
+  mWidth: 100
+  mHeight: 88
+  mDepth: 433
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 1
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 1.1363636
+  mType: 0
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 114827308521691572, guid: b0027c3748c891c4bbf6c17808312d66, type: 2}
+  mSpriteName: "\uADF8\uB9BC13"
   mFillCenter: 1
 --- !u!114 &114783929506241416
 MonoBehaviour:

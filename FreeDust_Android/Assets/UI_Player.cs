@@ -6,6 +6,8 @@ public class UI_Player : UI_Parent {
 
     public GameObject _BlackSprite;
 
+
+
     void Start()
     {
         _BlackSprite = transform.Find("AnchorRB/OkButton/BlackSprite").gameObject;
@@ -17,6 +19,8 @@ public class UI_Player : UI_Parent {
                 _BlackSprite.SetActive(true);
             }
         };
+
+        
     }
 
     public void OnClickOkButton()

@@ -23,4 +23,11 @@ public static class UsefulFunction {
 
         return result;
     }
+
+    public static void SwapCard(ref Card obj1, ref Card obj2)
+    {
+        Card temp = obj1;
+        obj1 = obj2;
+        obj2 = temp;
+    }
 }

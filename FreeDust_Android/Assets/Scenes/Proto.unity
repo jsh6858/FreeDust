@@ -300,7 +300,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114204173431735060, guid: 7c13c6d0241fa450ba0a3874500ac144,
+    - target: {fileID: 114047916815864196, guid: 7c13c6d0241fa450ba0a3874500ac144,
         type: 2}
       propertyPath: uiCamera
       value: 
@@ -310,31 +310,11 @@ Prefab:
       propertyPath: uiCamera
       value: 
       objectReference: {fileID: 1759329599}
-    - target: {fileID: 114047916815864196, guid: 7c13c6d0241fa450ba0a3874500ac144,
+    - target: {fileID: 114204173431735060, guid: 7c13c6d0241fa450ba0a3874500ac144,
         type: 2}
       propertyPath: uiCamera
       value: 
       objectReference: {fileID: 1759329599}
-    - target: {fileID: 4818494729247302, guid: 7c13c6d0241fa450ba0a3874500ac144, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -367
-      objectReference: {fileID: 0}
-    - target: {fileID: 4124138747715152, guid: 7c13c6d0241fa450ba0a3874500ac144, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 353
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818494729247302, guid: 7c13c6d0241fa450ba0a3874500ac144, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 640
-      objectReference: {fileID: 0}
-    - target: {fileID: 4981321068738838, guid: 7c13c6d0241fa450ba0a3874500ac144, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 640
-      objectReference: {fileID: 0}
-    - target: {fileID: 4124138747715152, guid: 7c13c6d0241fa450ba0a3874500ac144, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 640
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c13c6d0241fa450ba0a3874500ac144, type: 2}
   m_IsPrefabAsset: 0
@@ -1048,8 +1028,8 @@ MonoBehaviour:
   useKeyboard: 1
   useController: 1
   stickyTooltip: 1
-  tooltipDelay: 1
-  longPressTooltip: 0
+  tooltipDelay: 0.5
+  longPressTooltip: 1
   mouseDragThreshold: 4
   mouseClickThreshold: 10
   touchDragThreshold: 40
@@ -1797,7 +1777,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114238371116181632, guid: 42eda71ee9afa4a988c647b2b351153f,
+    - target: {fileID: 114486015811716378, guid: 42eda71ee9afa4a988c647b2b351153f,
         type: 2}
       propertyPath: uiCamera
       value: 
@@ -1807,37 +1787,11 @@ Prefab:
       propertyPath: uiCamera
       value: 
       objectReference: {fileID: 1759329599}
-    - target: {fileID: 114486015811716378, guid: 42eda71ee9afa4a988c647b2b351153f,
+    - target: {fileID: 114238371116181632, guid: 42eda71ee9afa4a988c647b2b351153f,
         type: 2}
       propertyPath: uiCamera
       value: 
       objectReference: {fileID: 1759329599}
-    - target: {fileID: 114307048793844476, guid: 42eda71ee9afa4a988c647b2b351153f,
-        type: 2}
-      propertyPath: mAtlas
-      value: 
-      objectReference: {fileID: 114827308521691572, guid: b0027c3748c891c4bbf6c17808312d66,
-        type: 2}
-    - target: {fileID: 4203437779750782, guid: 42eda71ee9afa4a988c647b2b351153f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -360
-      objectReference: {fileID: 0}
-    - target: {fileID: 4017705578591436, guid: 42eda71ee9afa4a988c647b2b351153f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 4017705578591436, guid: 42eda71ee9afa4a988c647b2b351153f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203437779750782, guid: 42eda71ee9afa4a988c647b2b351153f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: 4772097425214368, guid: 42eda71ee9afa4a988c647b2b351153f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -640
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42eda71ee9afa4a988c647b2b351153f, type: 2}
   m_IsPrefabAsset: 0

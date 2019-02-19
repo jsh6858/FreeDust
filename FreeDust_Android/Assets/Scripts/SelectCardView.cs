@@ -68,6 +68,19 @@ public class SelectCardView : MonoBehaviour {
 			return _scrollView;
 		}
 	}
+
+	GameObject _enhance;
+	GameObject enhance
+	{
+		get
+		{
+			if(null == _enhance)
+			{
+				_enhance = transform.Find("Front/Enhance").gameObject;
+			}
+			return _enhance;
+		}
+	}
 	
 	void Start()
 	{
@@ -79,7 +92,7 @@ public class SelectCardView : MonoBehaviour {
 		back.SetActive(!b);	
 	}
 	
-	public void SetType(CARD_TYPE type)
+	public void SetType(CARD_TYPE type, bool bEnhance = false)
 	{
 		for(int i=0; i<objType.Length; ++i)
 		{
@@ -88,6 +101,7 @@ public class SelectCardView : MonoBehaviour {
 			else
 				_objType[i].SetActive(false);
 		}
+		enhance.SetActive(bEnhance);
 	}
 	public IEnumerator PlayAnim(string anim)
 	{

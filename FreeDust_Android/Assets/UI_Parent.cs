@@ -10,7 +10,7 @@ public class UI_Parent : MonoBehaviour {
 
 	public Animator _damaged;
 
-	public float _hpDamaged;
+	public float _hpDamaged; // 피해 입은 데미지
 
 	public UILabel _damagedHp;
 	public UILabel _curHp;
@@ -22,6 +22,12 @@ public class UI_Parent : MonoBehaviour {
 		_hp = ParserManager.HP;
 		_ad = ParserManager.AD;
 
+		_curHp.text = ((int)_hp).ToString();
+	}
+
+	public void SetHp(float hp)
+	{
+		_hp = hp;
 		_curHp.text = ((int)_hp).ToString();
 	}
 

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MyCard : Card {
     
+    public delegate void showToolTip(MyCard card, bool state);
+    public showToolTip toolTip;
+
     Animator _animator;
 
     public GameObject _blackSprite;
@@ -53,5 +56,11 @@ public class MyCard : Card {
             _animator.Rebind();
             _animator.enabled = false;
         }
+    }
+
+    public void OnTooltip(bool state)
+    {
+        if(null != toolTip)
+            toolTip(this, state);
     }
 }

@@ -30,11 +30,12 @@ public class InGameManager : MonoBehaviour {
         {
             return gameState;
         }
-    
     }
 
     public int _quarter;
     public CARD_TYPE _attribute;
+
+    bool _bDuece;
 
     void Awake()
     {
@@ -51,6 +52,8 @@ public class InGameManager : MonoBehaviour {
 
         _quarter = 1;
         _attribute = CARD_TYPE.END;
+
+        _bDuece = false;
 
         _gameState = GAME_STATE.END;
     }
@@ -100,10 +103,10 @@ public class InGameManager : MonoBehaviour {
         }
 
         // Select View     
-        _uiPlayer._SelectCardView.SetType(myCard._cardType);
+        _uiPlayer._SelectCardView.SetType(myCard._cardType, myCard._bEnhanced);
         _uiPlayer._SelectCardView.SetFront(false);
         _uiPlayer._SelectCardView.SetSelectCardMode(false);
-        _uiEnemy._SelectCardView.SetType(enemyCard._cardType);
+        _uiEnemy._SelectCardView.SetType(enemyCard._cardType, enemyCard._bEnhanced);
         _uiEnemy._SelectCardView.SetFront(false);
 
         // Damage
@@ -142,10 +145,7 @@ public class InGameManager : MonoBehaviour {
         _uiRound.SetRound(_quarter, (int)_attribute);
 
         // Select View
-        _uiPlayer._SelectCardView.SetType(CARD_TYPE.END);
-        _uiPlayer._SelectCardView.SetFront(true);
-        _uiEnemy._SelectCardView.SetType(CARD_TYPE.END);
-        _uiEnemy._SelectCardView.SetFront(false);
+        Initialize_SelectView();
 
         // 내 카드 강화
         Card myCard = _myDeck.Get_SelectedCard();
@@ -159,8 +159,6 @@ public class InGameManager : MonoBehaviour {
         Card enemyCard = Singleton.aiManager.Get_CardToEnhance(_enemyDeck.Get_Deck());
         if (null != enemyCard) 
             enemyCard.Enhance(true);
-
-        
     }
 
     // OK 버튼 누르거나, 시간 다 되었을때
@@ -206,18 +204,17 @@ public class InGameManager : MonoBehaviour {
         StartCoroutine(_uiPlayer.PlayDamagedAnim("Damaged_Count"));
         yield return StartCoroutine(_uiEnemy.PlayDamagedAnim("Damaged_Count"));
 
-        bool b = true;
         // 체력 감소
         StartCoroutine(_uiPlayer.PlayHpAnim());
         StartCoroutine(_uiEnemy.PlayHpAnim());
 
         yield return new WaitUntil(()=> (_uiPlayer._hpDamaged == 0) && (_uiEnemy._hpDamaged == 0));
 
-        if(_uiPlayer._hp <= 0f && _uiEnemy._hp <= 0f) // 듀스
+        if((_uiPlayer._hp <= 0f && _uiEnemy._hp <= 0f)) // 듀스
         {
-            (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("듀스", 0.5f, false);
+            if(!_bDuece) (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("듀스", 0.5f, false);
 
-            
+            StartCoroutine(PlayDeuce());
         }
         else if(_uiPlayer._hp <= 0f)
         {
@@ -230,8 +227,13 @@ public class InGameManager : MonoBehaviour {
             Singleton.popUpManager.Get_PopUp("SystemMessage").SetCallBackFunc(gameObject, "GoToMain");
         }
         else
-            AnimFinish();
-
+        {
+            if(_bDuece)
+                StartCoroutine(PlayDeuce());
+            else
+                AnimFinish();
+        }
+            
         yield return null;
     }
 
@@ -246,10 +248,7 @@ public class InGameManager : MonoBehaviour {
         _uiRound.SetRound(_quarter, (int)_attribute);
 
         // Select View
-        _uiPlayer._SelectCardView.SetType(CARD_TYPE.END);
-        _uiPlayer._SelectCardView.SetFront(true);
-        _uiEnemy._SelectCardView.SetType(CARD_TYPE.END);
-        _uiEnemy._SelectCardView.SetFront(false);
+        Initialize_SelectView();
 
         if(_myDeck.LeftCount() == 1)
             CardChangeMode();
@@ -260,7 +259,7 @@ public class InGameManager : MonoBehaviour {
     // 카드 변경
     void CardChangeMode()
     {
-        (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("카드를\n 교체하세요", 1f);
+        if(!_bDuece) (Singleton.popUpManager.Get_PopUp("SystemMessage") as SystemMessage).ShowMessage("카드를\n 교체하세요", 1f);
 
         _uiPlayer._SelectCardView.SetSelectCardMode(true);
         _uiPlayer._BlackSprite.SetActive(false);
@@ -291,8 +290,33 @@ public class InGameManager : MonoBehaviour {
             _uiPlayer._BlackSprite.SetActive(false);
     }
 
-    
+    IEnumerator PlayDeuce()
+    {
+        _bDuece = true;
 
+        _uiPlayer.SetHp(1);
+        _uiEnemy.SetHp(1);
+
+        _myDeck.Reset();
+        _enemyDeck.Reset();
+
+        while(true)
+        {
+            if(_myDeck.LeftCount() == 1)
+                break;
+
+             yield return new WaitForSeconds(1f);
+
+            _myDeck.UseCard(_myDeck.Get_LeftmostCard());
+            _enemyDeck.UseCard(_enemyDeck.Get_LeftmostCard());
+        }
+
+        Initialize_SelectView();
+
+        AnimFinish();
+
+        yield break;
+    }
 
     // 5개 카드 선택
     public void SetMyCard(Card[] myCard)
@@ -324,6 +348,14 @@ public class InGameManager : MonoBehaviour {
         SceneChangeManager.Change_Scene("Main");
     }
 
+    void Initialize_SelectView()
+    {
+        _uiPlayer._SelectCardView.SetType(CARD_TYPE.END);
+        _uiPlayer._SelectCardView.SetFront(true);
+        _uiEnemy._SelectCardView.SetType(CARD_TYPE.END);
+        _uiEnemy._SelectCardView.SetFront(false);
+    }
+
 #if UNITY_EDITOR
     void Update()
     {
@@ -340,11 +372,19 @@ public class InGameManager : MonoBehaviour {
             
         }
 
-        if(Input.GetKeyDown(KeyCode.U))
+        if(Input.GetKeyDown(KeyCode.L))
         {
             _myDeck.UseCard(_myDeck.Get_LeftmostCard());
             _enemyDeck.UseCard(_enemyDeck.Get_LeftmostCard());
         }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            _myDeck.UseCard(_myDeck.Get_RightmostCard());
+            _enemyDeck.UseCard(_enemyDeck.Get_RightmostCard());
+        }
+
+        
     }
 #endif
 

@@ -67,6 +67,17 @@ public class Deck : MonoBehaviour {
         return null;
     }
 
+    public Card Get_RightmostCard()
+    {
+        for(int i=_cards.Length - 1; i > 0; --i)
+        {
+            if(!_cards[i]._bUsed)
+                return _cards[i];
+        }
+
+        return null;
+    }
+
     public void UseCard(Card card)
     {
         card._bUsed = true;

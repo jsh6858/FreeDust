@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MyDeck : Deck {
 
-    int _iSelectedCard;
-
     CardInfo _cardInfo;
     CardInfo cardInfo
     {
@@ -24,8 +22,6 @@ public class MyDeck : Deck {
     }
 
     public BoxCollider _boxCollider;
-
-    float _fTime = 0f;
 
     void Start()
     {
@@ -57,16 +53,7 @@ public class MyDeck : Deck {
 
             EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onClick, selectEvent);
 
-            selectEvent = new EventDelegate(this, "Press");
-            selectEvent.parameters[0].value = i;
-
-            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onHoverOver, selectEvent);
-
-            selectEvent = new EventDelegate(this, "Release");
-            selectEvent.parameters[0].value = i;
-
-            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onRelease, selectEvent);
-            EventDelegate.Add(_cards[i].GetComponent<UIEventTrigger>().onHoverOut, selectEvent);
+            (_cards[i] as MyCard).toolTip += OnToolTip;
         }
     }
     
@@ -78,7 +65,7 @@ public class MyDeck : Deck {
             {
                 _cards[i].OnSelected();
 
-                Singleton.inGameManager._uiPlayer._SelectCardView.SetType(_cards[i]._cardType); // CardView
+                Singleton.inGameManager._uiPlayer._SelectCardView.SetType(_cards[i]._cardType, _cards[i]._bEnhanced); // CardView
                 Singleton.inGameManager._uiPlayer._BlackSprite.SetActive(false); // OkButton
             }
             else
@@ -88,36 +75,14 @@ public class MyDeck : Deck {
         }
     }
 
-    public void Press(int index)
+    public void OnToolTip(MyCard card, bool state)
     {
-        LogManager.Log("Press!");
-
-        _iSelectedCard = index;
-
-        _fTime = 1f;
-    }
-    public void Release(int index)
-    {
-        LogManager.Log("Release!");
-
-        _iSelectedCard = -1;
-
-        _fTime = -1f;
-    }
-
-    void Update()
-    {
-        if(_fTime > 0f)
+        for(int i=0; i<_cards.Length; ++i)
         {
-            _fTime -= Time.deltaTime;
-
-            if(_fTime < 0f)
+            if(card == _cards[i])
             {
-                LogManager.Log("Show CardInfo " + _iSelectedCard);
-
-                cardInfo.SetCardInfo(_cards[_iSelectedCard]);
-
-                _fTime = -1f;
+                cardInfo.SetCardInfo(_cards[i]);
+                break;
             }
         }
     }
